@@ -11,30 +11,58 @@
       "type": "mcq",
       "prompt": "【大問1：リスニング（文字版）】次の英文は放送内容だと思って読み、問いに答えなさい。\n\n(Announcement)\nGood morning, students. Today’s after-school soccer practice will start at 4:30, not 4:00, because the gym will be used for a meeting. If it starts to rain, practice will be canceled, and you should go home directly.\n\nQuestion: Soccer practice will start at ____.",
       "choices": [
-        { "id": "A", "text": "4:00" },
-        { "id": "B", "text": "4:30" },
-        { "id": "C", "text": "5:00" },
-        { "id": "D", "text": "It will be canceled." }
+        {
+          "id": "A",
+          "text": "4:00"
+        },
+        {
+          "id": "B",
+          "text": "4:30"
+        },
+        {
+          "id": "C",
+          "text": "5:00"
+        },
+        {
+          "id": "D",
+          "text": "It will be canceled."
+        }
       ],
       "answerChoiceId": "B",
       "explanation": "“will start at 4:30, not 4:00” より。",
-      "tags": ["listening-style"],
+      "tags": [
+        "listening-style"
+      ],
       "difficulty": 2
     },
-
     {
       "id": "G1",
       "type": "mcq",
       "prompt": "【大問2：誤文訂正】次の文の下線部[A]〜[D]のうち、誤りを含む部分を1つ選びなさい。\nShe enjoy[A] playing[B] the[C] piano[D] after school.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[She]"
+        },
+        {
+          "id": "B",
+          "text": "B[enjoy[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[playing[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[the[C]]"
+        }
       ],
       "answerChoiceId": "A",
       "explanation": "主語が She（三人称単数）なので enjoy → enjoys。",
-      "tags": ["error-correction", "s-v-agreement"],
+      "tags": [
+        "error-correction",
+        "s-v-agreement"
+      ],
       "difficulty": 2
     },
     {
@@ -42,14 +70,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】I have[A] went[B] to[C] Kanazawa[D] many times.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】I]"
+        },
+        {
+          "id": "B",
+          "text": "B[have[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[went[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[to[C]]"
+        }
       ],
       "answerChoiceId": "B",
       "explanation": "現在完了：have + 過去分詞。went → gone。",
-      "tags": ["error-correction", "present-perfect"],
+      "tags": [
+        "error-correction",
+        "present-perfect"
+      ],
       "difficulty": 3
     },
     {
@@ -57,14 +100,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】My brother[A] is[B] taller[C] than[D] me.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】My]"
+        },
+        {
+          "id": "B",
+          "text": "B[brother[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[is[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[taller[C]]"
+        }
       ],
       "answerChoiceId": "D",
       "explanation": "入試では than I (am) が正とされることが多い。",
-      "tags": ["error-correction", "comparison"],
+      "tags": [
+        "error-correction",
+        "comparison"
+      ],
       "difficulty": 4
     },
     {
@@ -72,14 +130,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】We didn’t[A] started[B] the[C] game[D] because it rained.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】We]"
+        },
+        {
+          "id": "B",
+          "text": "B[didn’t[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[started[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[the[C]]"
+        }
       ],
       "answerChoiceId": "B",
       "explanation": "didn’t の後は動詞の原形。",
-      "tags": ["error-correction", "aux-do"],
+      "tags": [
+        "error-correction",
+        "aux-do"
+      ],
       "difficulty": 3
     },
     {
@@ -87,14 +160,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】This is[A] the book[B] who[C] I bought[D] yesterday.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】This]"
+        },
+        {
+          "id": "B",
+          "text": "B[is[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[the]"
+        },
+        {
+          "id": "D",
+          "text": "D[book[B]]"
+        }
       ],
       "answerChoiceId": "C",
       "explanation": "先行詞が物なので who は不可。",
-      "tags": ["error-correction", "relative-pronoun"],
+      "tags": [
+        "error-correction",
+        "relative-pronoun"
+      ],
       "difficulty": 3
     },
     {
@@ -102,14 +190,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】He made[A] me[B] to clean[C] my room[D].",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】He]"
+        },
+        {
+          "id": "B",
+          "text": "B[made[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[me[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[to]"
+        }
       ],
       "answerChoiceId": "C",
       "explanation": "make + 人 + 動詞の原形。",
-      "tags": ["error-correction", "make-causative"],
+      "tags": [
+        "error-correction",
+        "make-causative"
+      ],
       "difficulty": 3
     },
     {
@@ -117,14 +220,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】I want[A] you[B] help[C] me[D].",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】I]"
+        },
+        {
+          "id": "B",
+          "text": "B[want[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[you[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[help[C]]"
+        }
       ],
       "answerChoiceId": "C",
       "explanation": "want + 人 + to do。",
-      "tags": ["error-correction", "to-infinitive"],
+      "tags": [
+        "error-correction",
+        "to-infinitive"
+      ],
       "difficulty": 2
     },
     {
@@ -132,14 +250,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】There are[A] much[B] students[C] in[D] the library.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】There]"
+        },
+        {
+          "id": "B",
+          "text": "B[are[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[much[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[students[C]]"
+        }
       ],
       "answerChoiceId": "B",
       "explanation": "students は可算複数なので many。",
-      "tags": ["error-correction", "many-much"],
+      "tags": [
+        "error-correction",
+        "many-much"
+      ],
       "difficulty": 2
     },
     {
@@ -147,14 +280,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】I have[A] lived[B] here[C] for five years ago[D].",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】I]"
+        },
+        {
+          "id": "B",
+          "text": "B[have[A]]"
+        },
+        {
+          "id": "C",
+          "text": "C[lived[B]]"
+        },
+        {
+          "id": "D",
+          "text": "D[here[C]]"
+        }
       ],
       "answerChoiceId": "D",
       "explanation": "現在完了＋期間に ago は使えない。",
-      "tags": ["error-correction", "present-perfect"],
+      "tags": [
+        "error-correction",
+        "present-perfect"
+      ],
       "difficulty": 4
     },
     {
@@ -162,14 +310,29 @@
       "type": "mcq",
       "prompt": "【誤文訂正】If it will[A] rain[B] tomorrow,[C] we will stay[D] at home.",
       "choices": [
-        { "id": "A", "text": "[A]" },
-        { "id": "B", "text": "[B]" },
-        { "id": "C", "text": "[C]" },
-        { "id": "D", "text": "[D]" }
+        {
+          "id": "A",
+          "text": "A[【誤文訂正】If]"
+        },
+        {
+          "id": "B",
+          "text": "B[it]"
+        },
+        {
+          "id": "C",
+          "text": "C[will[A]]"
+        },
+        {
+          "id": "D",
+          "text": "D[rain[B]]"
+        }
       ],
       "answerChoiceId": "A",
       "explanation": "if 節の中は未来でも現在形。",
-      "tags": ["error-correction", "if"],
+      "tags": [
+        "error-correction",
+        "if"
+      ],
       "difficulty": 4
     }
   ]
