@@ -1,20 +1,56 @@
 {
-  "version": "1.0",
-  "description": "金沢大学附属高校 英語・誤文訂正（作問不備ゼロ・安全版）",
+  "version": "1.1",
+  "description": "金沢大学附属高校 英語・誤文訂正／実戦演習",
   "school": "金沢大学附属高校",
-  "category": "error-correction",
-  "level": "Level 1（安全文法のみ）",
-  "policy": [
-    "1語修正で必ず正しい英文になる",
-    "文脈不要",
-    "流儀依存なし",
-    "for / since / ago 系は使用しない"
-  ],
   "quizzes": [
+    {
+      "id": "kindaifuzoku-error-2024",
+      "title": "金大附属 誤文訂正（想定年度A）",
+      "level": "標準〜やや難",
+      "focus": [
+        "三単現",
+        "現在完了",
+        "間接疑問文",
+        "関係代名詞",
+        "if 節",
+        "不定詞・動名詞"
+      ],
+      "url": "./quizzes/kindaifuzoku-error-2024.json"
+    },
+    {
+      "id": "kindaifuzoku-error-2025",
+      "title": "金大附属 誤文訂正（想定年度B）",
+      "level": "標準〜やや難",
+      "focus": [
+        "動名詞",
+        "for / since",
+        "関係代名詞（目的格）",
+        "間接疑問文",
+        "前置詞＋動名詞"
+      ],
+      "url": "./quizzes/kindaifuzoku-error-2025.json"
+    },
+    {
+      "id": "kindaifuzoku-english-practice-001",
+      "title": "金大附属 英語（形式準拠・実戦演習）",
+      "level": "金大附属：大問構成準拠（誤文訂正＋長文＋英作文）",
+      "tags": [
+        "kindaifuzoku",
+        "english",
+        "entrance-exam",
+        "error-correction",
+        "reading",
+        "writing"
+      ],
+      "url": "./quizzes/kindaifuzoku-english-practice-001.json"
+    },
+
+    /* ===== ここから：作問不備ゼロ・安全版 ===== */
+
     {
       "id": "safe-error-01",
       "title": "誤文訂正・安全版 01（Q1–Q20）",
-      "questionCount": 20,
+      "level": "Level 1（不備ゼロ）",
       "focus": [
         "三単現",
         "助動詞＋原形",
@@ -22,12 +58,12 @@
         "不定詞",
         "可算・不可算"
       ],
-      "url": "./safe-error-01.json"
+      "url": "./quizzes/safe-error-01.json"
     },
     {
       "id": "safe-error-02",
       "title": "誤文訂正・安全版 02（Q21–Q40）",
-      "questionCount": 20,
+      "level": "Level 1（不備ゼロ）",
       "focus": [
         "there is / are",
         "語順",
@@ -35,31 +71,31 @@
         "間接疑問文",
         "比較表現"
       ],
-      "url": "./safe-error-02.json"
+      "url": "./quizzes/safe-error-02.json"
     },
     {
       "id": "safe-error-03",
       "title": "誤文訂正・安全版 03（Q41–Q60）",
-      "questionCount": 20,
+      "level": "Level 1（不備ゼロ）",
       "focus": [
         "動名詞",
         "enough の語順",
-        "受け身・感情表現",
-        "関係代名詞（主格）"
+        "感情表現",
+        "前置詞"
       ],
-      "url": "./safe-error-03.json"
+      "url": "./quizzes/safe-error-03.json"
     },
     {
       "id": "safe-error-04",
       "title": "誤文訂正・安全版 04（Q61–Q80）",
-      "questionCount": 20,
+      "level": "Level 1（不備ゼロ）",
       "focus": [
         "関係代名詞",
-        "前置詞",
         "構文表現",
-        "定型表現"
+        "定型表現",
+        "語法"
       ],
-      "url": "./safe-error-04.json"
+      "url": "./quizzes/safe-error-04.json"
     }
   ]
 }
