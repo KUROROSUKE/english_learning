@@ -33,7 +33,7 @@
     {
       "id": "E2",
       "type": "mcq",
-      "prompt": "I A[have] B[been] Cto] D[Tokyo] last year.",
+      "prompt": "I A[have] B[been] C[to] D[Tokyo] last year.",
       "choices": [
         {
           "id": "A",
