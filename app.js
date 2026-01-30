@@ -4,6 +4,10 @@
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
+/* --- Configuration --- */
+const DATA_DIR = "./quizzes/"; // データがあるフォルダ
+const INDEX_FILE = "index.json";
+
 /* --- Elements --- */
 
 // Views
@@ -59,7 +63,7 @@ async function boot() {
     quizListCache = await loadQuizList();
     renderQuizSelect(quizListCache);
 
-    // URLパラメータがあれば即ロード
+    // URLパラメータ処理 (?quiz=...)
     const params = new URLSearchParams(location.search);
     const quizUrl = params.get("quiz");
     if (quizUrl) {
@@ -68,24 +72,39 @@ async function boot() {
     }
   } catch (e) {
     console.error(e);
-    alert("初期化エラー: " + e.message);
+    // エラー時はセレクトボックスに表示
+    quizSelect.innerHTML = `<option value="">読み込みエラー: ${e.message}</option>`;
   }
 }
 
 // 画面切り替え
 function switchView(viewName) {
-  Object.values(views).forEach(el => el.classList.remove("active"));
+  Object.values(views).forEach(el => {
+    if(el) el.classList.remove("active");
+  });
   if (views[viewName]) {
     views[viewName].classList.add("active");
     window.scrollTo(0, 0);
   }
 }
 
+// クイズ一覧ロード (./quizzes/index.json)
 async function loadQuizList() {
-  const res = await fetch("./index.json");
-  if (!res.ok) throw new Error("index.json load failed");
+  const indexUrl = DATA_DIR + INDEX_FILE;
+  const res = await fetch(indexUrl);
+  if (!res.ok) throw new Error(`${indexUrl} not found`);
+  
   const data = await res.json();
-  return data.quizzes || [];
+  const rawList = data.quizzes || [];
+
+  // URL補完ロジック: http や / で始まらない場合、DATA_DIR を付与する
+  return rawList.map(q => {
+    let url = q.url;
+    if (url && !url.startsWith("http") && !url.startsWith("/") && !url.startsWith("./")) {
+      url = DATA_DIR + url;
+    }
+    return { ...q, url };
+  });
 }
 
 function renderQuizSelect(list) {
@@ -96,10 +115,6 @@ function renderQuizSelect(list) {
     opt.textContent = q.title;
     quizSelect.appendChild(opt);
   });
-}
-
-function absUrl(url) {
-  try { return new URL(url, location.href).href; } catch { return url; }
 }
 
 /* --- Logic: Load & Quiz --- */
@@ -122,7 +137,7 @@ async function loadQuizFromUrl(url) {
     // 開始
     startQuiz(json.items, json.title);
   } catch (e) {
-    alert("読み込み失敗: " + e.message);
+    alert("読み込み失敗: " + e.message + "\n(index.json内のパスやファイル配置を確認してください)");
   }
 }
 
@@ -140,7 +155,7 @@ function renderQuizItems(items) {
   quizAppBody.innerHTML = "";
   
   if (items.length === 0) {
-    quizAppBody.innerHTML = `<div class="card">問題がありません。</div>`;
+    quizAppBody.innerHTML = `<div class="card">問題データがありません。</div>`;
     return;
   }
 
@@ -226,7 +241,7 @@ function renderQuizItems(items) {
 }
 
 btnQuitQuiz.addEventListener("click", () => {
-  if (confirm("中断してメニューに戻りますか？")) {
+  if (confirm("中断してメニューに戻りますか？\n（入力内容は失われます）")) {
     switchView("home");
   }
 });
@@ -295,7 +310,7 @@ btnGrade.addEventListener("click", async () => {
     btnRetryMissed.style.display = "none";
   }
 
-  // ログ保存 (StudyEngineのAPI仕様に合わせて修正)
+  // ログ保存
   if (window.StudyEngine) {
     try {
       // ログ用オブジェクト作成
@@ -306,14 +321,13 @@ btnGrade.addEventListener("click", async () => {
         quizSourceUrl: currentQuiz.url || "",
         total: currentItems.length,
         correct: correctCount,
-        scoreSum: 0, // 簡易実装では0
+        scoreSum: 0,
         scoreItems: 0,
-        itemMeta: {}, // 必須ではないが簡易的に空
+        itemMeta: {},
         userAnswers: userAnswers,
-        resultState: {} // 簡易的に空
+        resultState: {}
       };
       
-      // itemMetaなどを埋める（analyzeAttemptsで必要になるため）
       gradedItems.forEach(g => {
         attempt.itemMeta[g.id] = { tags: g.tags, type: "standard" };
         attempt.resultState[g.id] = { correct: g.correct };
@@ -321,7 +335,6 @@ btnGrade.addEventListener("click", async () => {
 
       await StudyEngine.addAttempt(attempt);
 
-      // updateCardsFromAttemptも呼ぶ必要がある（SR用）
       const qualityMap = {};
       gradedItems.forEach(g => {
         qualityMap[g.id] = { quality: g.correct ? 5 : 2, tags: g.tags };
@@ -383,7 +396,7 @@ btnClearHistory.addEventListener("click", async () => {
 async function refreshAnalysisView() {
   if (!window.StudyEngine) return;
   
-  // 履歴リスト (getHistoryではなくlistAttempts)
+  // 履歴リスト
   const attempts = await StudyEngine.listAttempts(20);
   if (attempts.length === 0) {
     historyListContent.innerHTML = "<div class='small'>履歴なし</div>";
@@ -402,9 +415,8 @@ async function refreshAnalysisView() {
     </div>`;
   }).join("");
 
-  // 分析 (analyzeAttempts)
+  // 分析
   const analysis = StudyEngine.analyzeAttempts(attempts);
-  // worstTags: [{tag, correct, attempts, acc}, ...]
   if (analysis.worstTags && analysis.worstTags.length) {
     insightsContent.innerHTML = `<strong>苦手タグTOP:</strong><br>` + 
       analysis.worstTags.slice(0, 5).map(t => 
@@ -414,7 +426,7 @@ async function refreshAnalysisView() {
     insightsContent.textContent = "タグ情報を含むデータがありません";
   }
 
-  // おすすめ (listDueCards)
+  // おすすめ
   const due = await StudyEngine.listDueCards(5, Date.now());
   if (due.length > 0) {
     recommendationsContent.innerHTML = `<strong>復習待ち: ${due.length}問</strong><br>` +
