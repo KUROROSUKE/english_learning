@@ -1,0 +1,506 @@
+{
+  "version": "1.0",
+  "type": "error-correction",
+  "items": [
+    {
+      "id": "Q41",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe usually take the bus to school.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：take（三単現）"
+    },
+    {
+      "id": "Q42",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe doesn’t wants to join the club.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：wants（助動詞）"
+    },
+    {
+      "id": "Q43",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI hope to see you soon again.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：soon（語順）"
+    },
+    {
+      "id": "Q44",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nMy brother is good at play basketball.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：play（動名詞）"
+    },
+    {
+      "id": "Q45",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThere were little people at the meeting.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：little（few）"
+    },
+    {
+      "id": "Q46",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe decided study abroad next year.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：study（to不定詞）"
+    },
+    {
+      "id": "Q47",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe made his sister cries loudly.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：cries（原形）"
+    },
+    {
+      "id": "Q48",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI am afraid to dogs.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：to（of）"
+    },
+    {
+      "id": "Q49",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThis book is too difficult for me read.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：read（to不定詞）"
+    },
+    {
+      "id": "Q50",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe looks happily when she sees her dog.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：happily（形容詞）"
+    },
+    {
+      "id": "Q51",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe was kind enough helping me.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：helping（to不定詞）"
+    },
+    {
+      "id": "Q52",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI didn’t know what does she want.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：does（間接疑問）"
+    },
+    {
+      "id": "Q53",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe has a lot of homeworks today.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：homeworks（不可算）"
+    },
+    {
+      "id": "Q54",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nMy father gave me some advices.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：advices（不可算）"
+    },
+    {
+      "id": "Q55",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe is taller than any student in his class.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：any（any other）"
+    },
+    {
+      "id": "Q56",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe asked me why did I come late.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：did（間接疑問）"
+    },
+    {
+      "id": "Q57",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI was surprised at hear the result.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：at（to）"
+    },
+    {
+      "id": "Q58",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nWe enjoyed watch the movie together.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：watch（動名詞）"
+    },
+    {
+      "id": "Q59",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe didn’t came to school yesterday.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：came（原形）"
+    },
+    {
+      "id": "Q60",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe has difficulty understand English.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：understand（動名詞）"
+    }
+  ]
+}

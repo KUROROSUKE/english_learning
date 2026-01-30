@@ -1,0 +1,506 @@
+{
+  "version": "1.0",
+  "type": "error-correction",
+  "items": [
+    {
+      "id": "Q61",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThis is the most interesting book what I have read.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：what（that）"
+    },
+    {
+      "id": "Q62",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe was angry because he was late.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：because（at）"
+    },
+    {
+      "id": "Q63",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI am tired of study all night.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：study（動名詞）"
+    },
+    {
+      "id": "Q64",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe kept to ask the same question.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：to（on）"
+    },
+    {
+      "id": "Q65",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe is one of the student who lives here.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：student（複数形）"
+    },
+    {
+      "id": "Q66",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI found it easy solve the problem.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：solve（to不定詞）"
+    },
+    {
+      "id": "Q67",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe apologized me for the mistake.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：me（to）"
+    },
+    {
+      "id": "Q68",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe asked him to not be late again.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：to（not to）"
+    },
+    {
+      "id": "Q69",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThere are no place to sit down.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：place（複数形）"
+    },
+    {
+      "id": "Q70",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe is married with a teacher.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：with（to）"
+    },
+    {
+      "id": "Q71",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe suggested to go shopping together.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：to（動名詞）"
+    },
+    {
+      "id": "Q72",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI was happy hear from you again.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：hear（to不定詞）"
+    },
+    {
+      "id": "Q73",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe has no choice but stay at home.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：stay（to）"
+    },
+    {
+      "id": "Q74",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe is famous by her kindness.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：by（for）"
+    },
+    {
+      "id": "Q75",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI am proud for my little sister.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：for（of）"
+    },
+    {
+      "id": "Q76",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe stopped to smoke last year.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：to（動名詞）"
+    },
+    {
+      "id": "Q77",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe told me what to do it next.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：it（削除）"
+    },
+    {
+      "id": "Q78",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI found the movie boring to watch.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：to（watching）"
+    },
+    {
+      "id": "Q79",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe doesn’t afraid of making mistakes.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "A",
+      "note": "誤り語：doesn’t（isn’t）"
+    },
+    {
+      "id": "Q80",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe kept silent during the meeting.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "A",
+      "note": "誤り語：kept（remained）"
+    }
+  ]
+}

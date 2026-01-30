@@ -1,0 +1,506 @@
+{
+  "version": "1.0",
+  "type": "error-correction",
+  "items": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe enjoy playing tennis after school.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "A",
+      "note": "誤り語：enjoy（三単現）"
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe don’t like coffee very much.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "A",
+      "note": "誤り語：don’t（三単現）"
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI want you help me with my homework.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：help（want + to）"
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nMy father made me to clean my room.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：to（make + 原形）"
+    },
+    {
+      "id": "Q5",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe is interested in play the piano.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：play（前置詞＋ing）"
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThere are much students in the classroom.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：much（many/much）"
+    },
+    {
+      "id": "Q7",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThis is the boy which lives next door.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：which（関係代名詞）"
+    },
+    {
+      "id": "Q8",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI did went to school by bike yesterday.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：went（did＋原形）"
+    },
+    {
+      "id": "Q9",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe doesn’t knows her name.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：knows（助動詞後）"
+    },
+    {
+      "id": "Q10",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nWe were too tired for play soccer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：play（too to）"
+    },
+    {
+      "id": "Q11",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe has many informations about the event.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：informations（不可算）"
+    },
+    {
+      "id": "Q12",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe is good at play the guitar.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：play（前置詞＋ing）"
+    },
+    {
+      "id": "Q13",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI am looking forward to see you again.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：see（to＋ing）"
+    },
+    {
+      "id": "Q14",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nThey were happy hear the news.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：hear（to不定詞）"
+    },
+    {
+      "id": "Q15",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe speaks English more good than before.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：good（比較）"
+    },
+    {
+      "id": "Q16",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe was late because of he missed the bus.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：of（because）"
+    },
+    {
+      "id": "Q17",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nI have two younger brother.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：brother（複数形）"
+    },
+    {
+      "id": "Q18",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nShe asked me where was the station.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "D",
+      "note": "誤り語：was（間接疑問）"
+    },
+    {
+      "id": "Q19",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nHe is taller from his brother.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "C",
+      "note": "誤り語：from（than）"
+    },
+    {
+      "id": "Q20",
+      "type": "mcq",
+      "prompt": "次の文のA〜Dのうち、誤りを含む語を1つ選びなさい。\nWe enjoyed to watch the movie together.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A"
+        },
+        {
+          "id": "B",
+          "text": "B"
+        },
+        {
+          "id": "C",
+          "text": "C"
+        },
+        {
+          "id": "D",
+          "text": "D"
+        }
+      ],
+      "answerChoiceId": "B",
+      "note": "誤り語：to（enjoy＋ing）"
+    }
+  ]
+}
