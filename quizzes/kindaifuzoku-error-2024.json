@@ -7,7 +7,7 @@
     {
       "id": "E1",
       "type": "mcq",
-      "prompt": "She enjoy[A] playing[B] tennis[C] after school[D].",
+      "prompt": "She A[enjoy] B[playing] C[tennis] after D[school].",
       "choices": [
         {
           "id": "A",
@@ -33,7 +33,7 @@
     {
       "id": "E2",
       "type": "mcq",
-      "prompt": "I have[A] been[B] to[C] Tokyo[D] last year.",
+      "prompt": "I A[have] B[been] Cto] D[Tokyo] last year.",
       "choices": [
         {
           "id": "A",
@@ -59,7 +59,7 @@
     {
       "id": "E3",
       "type": "mcq",
-      "prompt": "My brother[A] is[B] taller[C] than[D] I.",
+      "prompt": "My A[brother] B[is] C[taller] D[than] I.",
       "choices": [
         {
           "id": "A",
@@ -85,7 +85,7 @@
     {
       "id": "E4",
       "type": "mcq",
-      "prompt": "We didn’t[A] know[B] what[C] did he[D] say.",
+      "prompt": "We A[didn’t] B[know] C[what] did D[he] say.",
       "choices": [
         {
           "id": "A",
@@ -111,7 +111,7 @@
     {
       "id": "E5",
       "type": "mcq",
-      "prompt": "This is[A] the boy[B] which[C] lives[D] next door.",
+      "prompt": "This A[is] the B[boy] C[which] D[lives] next door.",
       "choices": [
         {
           "id": "A",
@@ -137,7 +137,7 @@
     {
       "id": "E6",
       "type": "mcq",
-      "prompt": "He made[A] me[B] to help[C] him[D].",
+      "prompt": "He A[made] B[me] to C[help] D[him].",
       "choices": [
         {
           "id": "A",
@@ -163,7 +163,7 @@
     {
       "id": "E7",
       "type": "mcq",
-      "prompt": "There are[A] many[B] informations[C] on[D] the Internet.",
+      "prompt": "There A[are] B[many] C[informations] D[on] the Internet.",
       "choices": [
         {
           "id": "A",
@@ -189,7 +189,7 @@
     {
       "id": "E8",
       "type": "mcq",
-      "prompt": "If it[A] will rain[B] tomorrow,[C] we will stay[D] home.",
+      "prompt": "If A[it] will B[rain] C[tomorrow], we will D[stay] home.",
       "choices": [
         {
           "id": "A",
@@ -215,7 +215,7 @@
     {
       "id": "E9",
       "type": "mcq",
-      "prompt": "I want[A] you[B] help[C] me[D] with my homework.",
+      "prompt": "I A[want] B[you] C[help] D[me] with my homework.",
       "choices": [
         {
           "id": "A",
@@ -241,7 +241,7 @@
     {
       "id": "E10",
       "type": "mcq",
-      "prompt": "She[A] was[B] too[C] tired[D] to study.",
+      "prompt": "A[She] B[was] C[too] D[tired] to study.",
       "choices": [
         {
           "id": "A",
