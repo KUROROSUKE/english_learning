@@ -38,23 +38,23 @@
     {
       "id": "G1",
       "type": "mcq",
-      "prompt": "【大問2：誤文訂正】次の文の下線部[A]〜[D]のうち、誤りを含む部分を1つ選びなさい。\nShe enjoy[A] playing[B] the[C] piano[D] after school.",
+      "prompt": "【大問2：誤文訂正】次の文の下線部[A]〜[D]のうち、誤りを含む部分を1つ選びなさい。\nShe A[enjoy] B[playing] C[the] D[piano] after school.",
       "choices": [
         {
           "id": "A",
-          "text": "A[She]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[enjoy[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[playing[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[the[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "A",
@@ -68,23 +68,23 @@
     {
       "id": "G2",
       "type": "mcq",
-      "prompt": "【誤文訂正】I have[A] went[B] to[C] Kanazawa[D] many times.",
+      "prompt": "【誤文訂正】I A[have] B[went] C[to] Kanazawa D[many] times.",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】I]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[have[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[went[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[to[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "B",
@@ -98,23 +98,23 @@
     {
       "id": "G3",
       "type": "mcq",
-      "prompt": "【誤文訂正】My brother[A] is[B] taller[C] than[D] me.",
+      "prompt": "【誤文訂正】My A[brother] B[is] C[taller] than D[me].",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】My]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[brother[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[is[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[taller[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "D",
@@ -128,23 +128,23 @@
     {
       "id": "G4",
       "type": "mcq",
-      "prompt": "【誤文訂正】We didn’t[A] started[B] the[C] game[D] because it rained.",
+      "prompt": "【誤文訂正】We A[didn’t] B[started] the C[game] because it D[rained].",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】We]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[didn’t[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[started[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[the[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "B",
@@ -158,23 +158,23 @@
     {
       "id": "G5",
       "type": "mcq",
-      "prompt": "【誤文訂正】This is[A] the book[B] who[C] I bought[D] yesterday.",
+      "prompt": "【誤文訂正】This A[is] the B[book] C[who] I D[bought] yesterday.",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】This]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[is[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[the]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[book[B]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "C",
@@ -188,23 +188,23 @@
     {
       "id": "G6",
       "type": "mcq",
-      "prompt": "【誤文訂正】He made[A] me[B] to clean[C] my room[D].",
+      "prompt": "【誤文訂正】He A[made] B[me] to C[clean] my D[room].",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】He]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[made[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[me[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[to]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "C",
@@ -218,23 +218,23 @@
     {
       "id": "G7",
       "type": "mcq",
-      "prompt": "【誤文訂正】I want[A] you[B] help[C] me[D].",
+      "prompt": "【誤文訂正】I A[want] B[you] C[help] D[me].",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】I]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[want[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[you[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[help[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "C",
@@ -248,23 +248,23 @@
     {
       "id": "G8",
       "type": "mcq",
-      "prompt": "【誤文訂正】There are[A] much[B] students[C] in[D] the library.",
+      "prompt": "【誤文訂正】There A[are] B[much] C[students] D[in] the library.",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】There]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[are[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[much[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[students[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "B",
@@ -278,23 +278,23 @@
     {
       "id": "G9",
       "type": "mcq",
-      "prompt": "【誤文訂正】I have[A] lived[B] here[C] for five years ago[D].",
+      "prompt": "【誤文訂正】I A[have] B[lived] C[here] for five years D[ago].",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】I]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[have[A]]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[lived[B]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[here[C]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "D",
@@ -308,23 +308,23 @@
     {
       "id": "G10",
       "type": "mcq",
-      "prompt": "【誤文訂正】If it will[A] rain[B] tomorrow,[C] we will stay[D] at home.",
+      "prompt": "【誤文訂正】If it A[will] B[rain] C[tomorrow], we will D[stay] at home.",
       "choices": [
         {
           "id": "A",
-          "text": "A[【誤文訂正】If]"
+          "text": "A"
         },
         {
           "id": "B",
-          "text": "B[it]"
+          "text": "B"
         },
         {
           "id": "C",
-          "text": "C[will[A]]"
+          "text": "C"
         },
         {
           "id": "D",
-          "text": "D[rain[B]]"
+          "text": "D"
         }
       ],
       "answerChoiceId": "A",
