@@ -1,0 +1,311 @@
+{
+  "version": "2.0",
+  "quizId": "kindaifuzoku-english-practice-001",
+  "title": "金大附属 英語（形式準拠・実戦演習）",
+  "lang": "ja",
+  "target": "金沢大学附属高校 入試対策",
+  "timeLimitSec": 3000,
+  "items": [
+    {
+      "id": "L1",
+      "type": "mcq",
+      "prompt": "【大問1：リスニング（文字版）】次の英文は放送内容だと思って読み、問いに答えなさい。\n\n(Announcement)\nGood morning, students. Today’s after-school soccer practice will start at 4:30, not 4:00, because the gym will be used for a meeting. If it starts to rain, practice will be canceled, and you should go home directly.\n\nQuestion: Soccer practice will start at ____.",
+      "choices": [
+        { "id": "A", "text": "4:00" },
+        { "id": "B", "text": "4:30" },
+        { "id": "C", "text": "5:00" },
+        { "id": "D", "text": "It will be canceled." }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "“will start at 4:30, not 4:00” なので 4:30。",
+      "tags": ["listening-style", "information-scan"],
+      "difficulty": 2
+    },
+
+    {
+      "id": "G1",
+      "type": "mcq",
+      "prompt": "【大問2：誤文訂正】次の文の[A]〜[D]のうち、誤りを含む部分を1つ選びなさい。\nShe [A] enjoy [B] playing [C] the piano [D] after school.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "主語が She（三人称単数）なので enjoy → enjoys。",
+      "tags": ["error-correction", "s-v-agreement"],
+      "difficulty": 2
+    },
+    {
+      "id": "G2",
+      "type": "mcq",
+      "prompt": "【誤文訂正】I [A] have [B] went [C] to Kanazawa [D] many times.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "C",
+      "explanation": "現在完了：have + 過去分詞。went → gone。",
+      "tags": ["error-correction", "present-perfect", "irregular-verbs"],
+      "difficulty": 3
+    },
+    {
+      "id": "G3",
+      "type": "mcq",
+      "prompt": "【誤文訂正】My brother [A] is [B] taller [C] than [D] me.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "D",
+      "explanation": "than の後は主格（I）か目的格（me）どちらも見かけるが、入試では「than I (am)」を正とすることが多い。ここでは文法問題として D を誤り扱い：me → I。",
+      "tags": ["error-correction", "comparison", "case"],
+      "difficulty": 4
+    },
+    {
+      "id": "G4",
+      "type": "mcq",
+      "prompt": "【誤文訂正】We [A] didn’t [B] started [C] the game [D] because it rained.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "C",
+      "explanation": "didn’t の後は動詞の原形。started → start。",
+      "tags": ["error-correction", "aux-do", "base-form"],
+      "difficulty": 3
+    },
+    {
+      "id": "G5",
+      "type": "mcq",
+      "prompt": "【誤文訂正】This is [A] the book [B] who [C] I bought [D] yesterday.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "C",
+      "explanation": "先行詞が物（book）なので who は不可。which/that が適切。",
+      "tags": ["error-correction", "relative-pronoun"],
+      "difficulty": 3
+    },
+    {
+      "id": "G6",
+      "type": "mcq",
+      "prompt": "【誤文訂正】He [A] made [B] me [C] to clean [D] my room.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "D",
+      "explanation": "make + 人 + 動詞の原形。to clean → clean。",
+      "tags": ["error-correction", "make-causative"],
+      "difficulty": 3
+    },
+    {
+      "id": "G7",
+      "type": "mcq",
+      "prompt": "【誤文訂正】I [A] want [B] you [C] help [D] me.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "D",
+      "explanation": "want + 人 + to do：help → to help。",
+      "tags": ["error-correction", "to-infinitive"],
+      "difficulty": 2
+    },
+    {
+      "id": "G8",
+      "type": "mcq",
+      "prompt": "【誤文訂正】There [A] are [B] much [C] students [D] in the library.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "C",
+      "explanation": "students（可算・複数）なので much ではなく many。",
+      "tags": ["error-correction", "many-much"],
+      "difficulty": 2
+    },
+    {
+      "id": "G9",
+      "type": "mcq",
+      "prompt": "【誤文訂正】I [A] have [B] lived [C] here [D] for five years ago.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "D",
+      "explanation": "現在完了＋期間は for five years。ago は過去の一点なので不可。for five years ago が誤り。",
+      "tags": ["error-correction", "present-perfect", "for-since-ago"],
+      "difficulty": 4
+    },
+    {
+      "id": "G10",
+      "type": "mcq",
+      "prompt": "【誤文訂正】If it [A] will rain [B] tomorrow, [C] we will stay [D] at home.",
+      "choices": [
+        { "id": "A", "text": "[A]" },
+        { "id": "B", "text": "[B]" },
+        { "id": "C", "text": "[C]" },
+        { "id": "D", "text": "[D]" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "if 節の中は未来でも現在形：will rain → rains。",
+      "tags": ["error-correction", "if", "future"],
+      "difficulty": 4
+    },
+
+    {
+      "id": "R3-P",
+      "type": "mcq",
+      "prompt": "【大問3：長文（短〜中）】まず本文を読み、Question 1 に答えなさい。\n\nPassage:\nSome people try to own fewer things. They believe that having too many items makes their lives complicated. By choosing only what they really need, they can save time and money. However, others say that collecting books or tools helps them learn new skills and enjoy their hobbies. The important point is not the number of things, but how we use them.\n\nQuestion 1: What is the main idea of the passage?",
+      "choices": [
+        { "id": "A", "text": "Owning fewer things always makes people happier." },
+        { "id": "B", "text": "Having many things is better than having fewer things." },
+        { "id": "C", "text": "What matters is how we use things, not how many we own." },
+        { "id": "D", "text": "People should stop collecting books and tools." }
+      ],
+      "answerChoiceId": "C",
+      "explanation": "最後の文が要旨：the important point is not the number... but how we use them。",
+      "tags": ["reading", "main-idea"],
+      "difficulty": 3
+    },
+    {
+      "id": "R3-2",
+      "type": "mcq",
+      "prompt": "【大問3】Question 2: According to the passage, why do some people own fewer things?",
+      "choices": [
+        { "id": "A", "text": "Because they want to collect more books." },
+        { "id": "B", "text": "Because they think too many items make life complicated." },
+        { "id": "C", "text": "Because they have no hobbies." },
+        { "id": "D", "text": "Because tools are too expensive." }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "2文目：having too many items makes their lives complicated。",
+      "tags": ["reading", "detail"],
+      "difficulty": 2
+    },
+
+    {
+      "id": "R4-P",
+      "type": "mcq",
+      "prompt": "【大問4：長文（長め）＋英作文】まず本文を読み、Question 1 に答えなさい。\n\nPassage:\nWhen a new type of money is introduced, people often feel uncomfortable at first. They may worry that prices will change, or that they will make mistakes when paying. In one country, the government replaced old bills with new ones to reduce counterfeiting. The design was beautiful, but many shop owners were nervous. They had to learn new numbers and new security marks quickly.\n\nA student named Hana helped at her family’s small store. She noticed that some customers were embarrassed when they could not recognize the new bills. Hana decided to make a simple guide. She drew pictures of the bills and wrote short tips. She also practiced counting change again and again.\n\nA week later, the store became calmer. Customers started to say, “Thank you. This is easy to understand.” Hana realized that the problem was not only money. It was fear of making a mistake. When people feel safe, they can learn faster.\n\nQuestion 1: Why did the government replace the old bills?",
+      "choices": [
+        { "id": "A", "text": "To make shop owners embarrassed." },
+        { "id": "B", "text": "To reduce counterfeiting." },
+        { "id": "C", "text": "To change the language on the bills." },
+        { "id": "D", "text": "To make prices higher." }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "1段落：replaced old bills with new ones to reduce counterfeiting。",
+      "tags": ["reading", "detail", "inference-light"],
+      "difficulty": 3
+    },
+    {
+      "id": "R4-2",
+      "type": "mcq",
+      "prompt": "【大問4】Question 2: What did Hana do to help customers?",
+      "choices": [
+        { "id": "A", "text": "She told them not to use the new bills." },
+        { "id": "B", "text": "She made a simple guide with pictures and tips." },
+        { "id": "C", "text": "She changed the designs of the bills." },
+        { "id": "D", "text": "She asked the government to stop the change." }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "2段落：make a simple guide / drew pictures / wrote tips。",
+      "tags": ["reading", "detail"],
+      "difficulty": 2
+    },
+    {
+      "id": "R4-3",
+      "type": "mcq",
+      "prompt": "【大問4】Question 3: According to the last paragraph, what was the real problem for many customers?",
+      "choices": [
+        { "id": "A", "text": "They disliked Hana’s drawings." },
+        { "id": "B", "text": "They were afraid of making a mistake." },
+        { "id": "C", "text": "They wanted to pay more money." },
+        { "id": "D", "text": "They could not read numbers at all." }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "3段落：the problem was… fear of making a mistake。",
+      "tags": ["reading", "main-idea"],
+      "difficulty": 3
+    },
+
+    {
+      "id": "W1",
+      "type": "translation",
+      "prompt": "【英作文（英訳）】次の日本語を英語にしなさい。\n「彼らは新しいお札に慣れるために、すぐに勉強しなければならなかった。」",
+      "accept": [
+        "They had to study quickly to get used to the new bills.",
+        "They had to learn quickly to get used to the new bills."
+      ],
+      "rubric": {
+        "points": 6,
+        "criteria": [
+          { "name": "had to", "points": 2, "checks": ["had to"] },
+          { "name": "learn/study quickly", "points": 2, "checks": ["learn quickly", "study quickly"] },
+          { "name": "get used to", "points": 2, "checks": ["get used to"] }
+        ],
+        "commonMistakes": [
+          { "pattern": "must studied", "feedback": "過去の「〜しなければならなかった」は had to。must に過去形は作りません。" },
+          { "pattern": "be used to do", "feedback": "get used to + 名詞/動名詞。to の後は動詞原形ではなく名詞扱い。" }
+        ]
+      },
+      "tags": ["writing", "had-to", "get-used-to"],
+      "difficulty": 4
+    },
+    {
+      "id": "W2",
+      "type": "translation",
+      "prompt": "【英作文（自由：2文）】次の条件に合う英文を2文で書きなさい。\n条件：① Hana が店で何をしたかを1文で述べる。② それがなぜ役に立ったかを1文で述べる。\n※文法ミスがあっても内容が満たされれば部分点あり。",
+      "accept": [
+        "Hana made a simple guide with pictures of the new bills. It helped customers feel safe and learn faster.",
+        "Hana drew pictures of the bills and wrote tips. This helped customers understand them without fear of mistakes."
+      ],
+      "rubric": {
+        "points": 8,
+        "criteria": [
+          { "name": "内容①（行動）", "points": 4, "checks": ["made a guide", "drew pictures", "wrote tips"] },
+          { "name": "内容②（理由/効果）", "points": 3, "checks": ["feel safe", "learn faster", "without fear", "understand"] },
+          { "name": "文として成立", "points": 1, "checks": ["periods", "two sentences"] }
+        ],
+        "commonMistakes": [
+          { "pattern": "Hana make", "feedback": "三単現や過去形のミスに注意：Hana made / Hana makes。" },
+          { "pattern": "because safe", "feedback": "because の後は文（主語＋動詞）にするか、形を整える（because they felt safe）。" }
+        ]
+      },
+      "tags": ["writing", "free-writing", "reason"],
+      "difficulty": 5
+    },
+
+    {
+      "id": "S1",
+      "type": "reorder",
+      "prompt": "【語順整序（得点差）】次の語を並べかえて、意味が通る英文を作りなさい。",
+      "tokens": ["to", "was", "for", "the", "too", "him", "box", "heavy", "carry"],
+      "answer": ["the", "box", "was", "too", "heavy", "for", "him", "to", "carry"],
+      "hint": "too ... for 人 to ～（人が～するには…すぎる）。",
+      "tags": ["word-order", "too-for-to"],
+      "difficulty": 4
+    }
+  ]
+}
