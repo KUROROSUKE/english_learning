@@ -1,103 +1,148 @@
-:root { color-scheme: light; }
-* { box-sizing: border-box; }
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
-  margin: 16px;
-  line-height: 1.5;
-  color: #111;
-}
-.top {
+/* --- New UI Additions --- */
+
+/* ヘッダーエリアの改善 */
+.top-bar {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  position: sticky; /* スクロールしても上に残る */
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  z-index: 100;
+  padding-top: 10px;
 }
-h1 { margin: 0; font-size: 18px; }
-.meta { color: #555; font-size: 12px; margin-top: 4px; }
-.topActions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-button {
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #f7f7f7;
-  cursor: pointer;
-}
-button:hover { background: #f0f0f0; }
-.toggle { font-size: 12px; color: #333; user-select: none; }
 
-.panel {
-  margin-top: 12px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 12px;
-}
-.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
-.field { display: flex; flex-direction: column; gap: 6px; min-width: 220px; }
-.field.grow { flex: 1; }
-label { font-size: 12px; color: #444; }
-input[type="url"], select, input[type="text"], textarea {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  width: 100%;
-}
-textarea { min-height: 90px; resize: vertical; }
+.brand h1 { font-size: 20px; color: var(--primary-color); margin: 0; }
+.brand .meta { font-size: 11px; color: #888; }
 
-.small { margin-top: 10px; color:#666; font-size: 12px; }
-
-.app { margin-top: 12px; }
-.card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 12px;
-  margin: 12px 0;
-}
-.qhead { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.qid { font-weight: 700; }
-.tags { display:flex; flex-wrap: wrap; gap: 6px; }
-.tag { border: 1px solid #ddd; border-radius: 999px; padding: 2px 8px; font-size: 11px; color: #444; }
-
-.prompt { margin: 8px 0 10px; }
-
-.tokens { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-.chip:hover { background: #fafafa; }
-.chip.disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
-
-.answerline {
+/* 進捗バー */
+.status-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 150px;
+}
+#progressText { font-size: 11px; font-weight: bold; color: var(--primary-color); }
+progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+}
+progress::-webkit-progress-bar { background-color: #eee; border-radius: 3px; }
+progress::-webkit-progress-value { background-color: var(--primary-color); border-radius: 3px; }
+
+/* Setup Panelの整理 */
+.panel-clean {
+  background: #fdfdfd;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.big-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: white;
+  margin-top: 5px;
+}
+.advanced-settings {
   margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+.panel-inner {
   padding: 10px;
-  border: 1px dashed #bbb;
+  background: #f4f4f4;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+/* 採点結果パネル */
+.result-panel {
+  background: #fff;
+  border: 2px solid var(--primary-color);
   border-radius: 12px;
-  min-height: 44px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.answerchip {
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid #9cc;
-  background: #f7ffff;
-  cursor: pointer;
-  user-select: none;
+.score-box { margin-bottom: 10px; }
+.score-label { font-size: 14px; color: #666; display: block; }
+.score-value { font-size: 32px; font-weight: bold; }
+.score-value.high { color: var(--primary-color); }
+.score-value.low { color: var(--accent-color); }
+
+/* アクションボタン周り */
+.action-area {
+  margin: 30px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #3d664a;
+  transform: translateY(0);
+}
+.btn-primary:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+.btn-primary:disabled {
+  background-color: #ccc;
+  box-shadow: none;
+  cursor: default;
+  transform: none;
+}
+/* 強調アニメーション */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.pulse { animation: pulse 2s infinite; }
 
-.choices { display:flex; flex-direction: column; gap: 8px; }
-.choice { display:flex; gap: 10px; align-items: center; }
+.btn-secondary {
+  background: white;
+  border: 1px solid #ccc;
+}
+.btn-small { padding: 4px 8px; font-size: 12px; }
+.btn-danger { background: #fff0f0; border-color: #ffcccc; color: #d00; font-size: 11px;}
 
-.result { margin-top: 10px; padding: 10px; border-radius: 12px; }
-.ok { background: #f0fff2; border: 1px solid #bde5c3; }
-.ng { background: #fff4f4; border: 1px solid #e6bcbc; }
+/* クイズカード内の調整 */
+.qnum {
+  background: var(--primary-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.choice.selected {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  font-weight: bold;
+}
+.frozen { pointer-events: none; opacity: 0.9; }
 
-details { margin-top: 10px; }
-.footer { margin-top: 18px; color: #666; font-size: 12px; }
-code { background:#f5f5f5; padding: 2px 6px; border-radius: 8px; }
+/* 解説エリア */
+.explanation {
+  margin-top: 15px;
+  padding: 15px;
+  background: #fff8e1; /* 薄い黄色 */
+  border: 1px solid #ffe082;
+  border-radius: 8px;
+  color: #444;
+}
+.correct-val { color: #d32f2f; font-weight: bold; }
