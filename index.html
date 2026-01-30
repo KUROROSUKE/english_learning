@@ -73,21 +73,33 @@
   <section class="panel" id="insightsPanel">
   <div class="row">
     <div class="field grow">
-      <label>弱点分析・おすすめ（忘却曲線ベース）</label>
-      <div class="small">設問ごとに次回の推奨タイミング（due）を計算し、今日やるべき問題を提示します。</div>
+      <label>弱点分析</label>
+      <div class="small">タグ別・問題別の正答率、復習のおすすめを表示します。</div>
     </div>
     <div class="field">
       <label>&nbsp;</label>
-      <button id="btnRefreshInsights">更新</button>
-    </div>
-    <div class="field">
-      <label>&nbsp;</label>
-      <button id="btnStartDueSession">今日のおすすめだけ表示</button>
+      <button id="btnRefreshInsights">分析更新</button>
     </div>
   </div>
 
-  <div id="insightsBox" class="small" style="margin-top:10px;">Loading…</div>
+  <div id="insights" class="small" style="margin-top:10px;">Loading insights…</div>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:12px 0;" />
+
+  <div class="row">
+    <div class="field grow">
+      <label>自動レコメンド（忘却曲線/間隔反復）</label>
+      <div class="small">期限（Due）を過ぎた問題を優先して提示します。</div>
+    </div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <button id="btnRecommend">おすすめ更新</button>
+    </div>
+  </div>
+
+  <div id="recommendations" class="small" style="margin-top:10px;">Loading recommendations…</div>
 </section>
+
 
 
   <main id="app" class="app">
