@@ -10,7 +10,7 @@
       "url": "./hs-entrance-grammar-authentic-001.json"
     },
     {
-      "id": "hs-entrance-grammar-003",
+      "id": "hs-entrance-grammar-authentic-001.json",
       "title": "高校受験 英語 文法テスト（入試準拠・改訂）",
       "level": "公立 標準",
       "tags": ["grammar", "basic", "entrance-exam"],
@@ -31,6 +31,7 @@
       "url": "./hs-entrance-grammar-001.json"
     },
     {
+      "id": "kindaifuzoku-english-practice-001.json",
       "version": "1.0",
       "description": "金大附属高校（石川）英語対策：形式準拠・実戦演習クイズ一覧",
       "quizzes": [
