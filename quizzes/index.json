@@ -44,9 +44,6 @@
       ],
       "url": "./quizzes/kindaifuzoku-english-practice-001.json"
     },
-
-    /* ===== ここから：作問不備ゼロ・安全版 ===== */
-
     {
       "id": "safe-error-01",
       "title": "誤文訂正・安全版 01（Q1–Q20）",
