@@ -1,28 +1,14 @@
-/* =========================
- * 設定：URL一覧をどう用意するか選ぶ
- *  - "hardcoded" : app.js に一覧を直書き
- *  - "index"     : quizzes/index.json を fetch して一覧を取得（推奨）
- * ========================= */
+/* app.js
+ * - UI / rendering / grading
+ * - calls StudyEngine for persistence, analytics, recommendations
+ */
+
+"use strict";
+
 const QUIZ_LIST_MODE = "index"; // "hardcoded" or "index"
-
-/* hardcoded 用（必要ならここを編集） */
-const HARDCODED_QUIZZES = [
-  // { id: "hs-entrance-grammar-001", title: "高校受験 英語 文法ミニテスト", url: "./quizzes/hs-entrance-grammar-001.json" }
-];
-
-/* index 用：デフォルトの index.json 位置 */
+const HARDCODED_QUIZZES = [];
 const DEFAULT_INDEX_URL = "./quizzes/index.json";
 
-/* =========================
- * IndexedDB settings
- * ========================= */
-const DB_NAME = "quiz_app_db";
-const DB_VERSION = 1;
-const STORE_ATTEMPTS = "attempts";
-
-/* =========================
- * DOM
- * ========================= */
 const $ = (sel, root = document) => root.querySelector(sel);
 
 const appTitle = $("#appTitle");
@@ -39,36 +25,24 @@ const btnRefreshHistory = $("#btnRefreshHistory");
 const btnClearHistory = $("#btnClearHistory");
 const historyList = $("#historyList");
 
-/* =========================
- * State
- * ========================= */
+const btnRefreshInsights = $("#btnRefreshInsights");
+const insightsDiv = $("#insights");
+const btnRecommend = $("#btnRecommend");
+const recDiv = $("#recommendations");
+
+// State
 let currentQuiz = null;
-let currentQuizSourceUrl = null; // ログに残す用
-let userAnswers = {};            // itemId -> answer payload
-let resultState = {};            // itemId -> {correct, message, score?}
+let currentQuizSourceUrl = null;
+let userAnswers = {};
+let resultState = {};
 let showAnswers = false;
-
-/* reorder 用: itemId -> {availableTokens: string[], chosenTokens: string[]} */
 let reorderState = {};
+let quizListCache = []; // quizId->url の逆引き用（レコメンドで別クイズを開くため）
 
-/* =========================
- * URL params
- * ========================= */
+/* URL params */
 function getParams() {
   const p = new URLSearchParams(location.search);
-  return {
-    quiz: p.get("quiz"),   // direct quiz json url
-    index: p.get("index")  // quiz list index json url
-  };
-}
-
-/* =========================
- * Fetch helpers
- * ========================= */
-async function fetchJson(url) {
-  const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`JSONの読み込みに失敗: ${res.status} ${res.statusText}`);
-  return await res.json();
+  return { quiz: p.get("quiz"), index: p.get("index") };
 }
 
 function absUrl(url) {
@@ -85,75 +59,13 @@ function escapeHtml(s) {
     .replaceAll("'", "&#039;");
 }
 
-/* =========================
- * IndexedDB helpers
- * ========================= */
-function openDb() {
-  return new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME, DB_VERSION);
-    req.onerror = () => reject(req.error);
-    req.onupgradeneeded = () => {
-      const db = req.result;
-      if (!db.objectStoreNames.contains(STORE_ATTEMPTS)) {
-        const store = db.createObjectStore(STORE_ATTEMPTS, { keyPath: "id", autoIncrement: true });
-        store.createIndex("by_ts", "ts");
-        store.createIndex("by_quizId_ts", ["quizId", "ts"]);
-      }
-    };
-    req.onsuccess = () => resolve(req.result);
-  });
+async function fetchJson(url) {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`JSONの読み込みに失敗: ${res.status} ${res.statusText}`);
+  return await res.json();
 }
 
-async function addAttempt(attempt) {
-  const db = await openDb();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE_ATTEMPTS, "readwrite");
-    tx.oncomplete = () => resolve(true);
-    tx.onerror = () => reject(tx.error);
-
-    const store = tx.objectStore(STORE_ATTEMPTS);
-    store.add(attempt);
-  });
-}
-
-async function listAttempts(limit = 50) {
-  const db = await openDb();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE_ATTEMPTS, "readonly");
-    tx.onerror = () => reject(tx.error);
-
-    const store = tx.objectStore(STORE_ATTEMPTS);
-    const idx = store.index("by_ts");
-
-    // 新しい順に取りたいので cursor を "prev"
-    const req = idx.openCursor(null, "prev");
-    const out = [];
-    req.onerror = () => reject(req.error);
-    req.onsuccess = () => {
-      const cursor = req.result;
-      if (!cursor || out.length >= limit) {
-        resolve(out);
-        return;
-      }
-      out.push(cursor.value);
-      cursor.continue();
-    };
-  });
-}
-
-async function clearAttempts() {
-  const db = await openDb();
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE_ATTEMPTS, "readwrite");
-    tx.onerror = () => reject(tx.error);
-    tx.oncomplete = () => resolve(true);
-    tx.objectStore(STORE_ATTEMPTS).clear();
-  });
-}
-
-/* =========================
- * Quiz list loading
- * ========================= */
+/* Quiz list */
 async function loadQuizList() {
   const { index } = getParams();
   if (QUIZ_LIST_MODE === "hardcoded") return HARDCODED_QUIZZES;
@@ -166,16 +78,9 @@ async function loadQuizList() {
 
 function renderQuizSelect(list) {
   quizSelect.innerHTML = "";
-  if (!list.length) {
-    const opt = document.createElement("option");
-    opt.value = "";
-    opt.textContent = "クイズ一覧が空です";
-    quizSelect.appendChild(opt);
-    return;
-  }
   const opt0 = document.createElement("option");
   opt0.value = "";
-  opt0.textContent = "選択してください";
+  opt0.textContent = list.length ? "選択してください" : "クイズ一覧が空です";
   quizSelect.appendChild(opt0);
 
   for (const q of list) {
@@ -187,9 +92,7 @@ function renderQuizSelect(list) {
   }
 }
 
-/* =========================
- * Quiz loading + init
- * ========================= */
+/* init/reset */
 function resetState() {
   userAnswers = {};
   resultState = {};
@@ -220,9 +123,7 @@ async function loadQuizFromUrl(url) {
   renderQuiz(quiz, currentQuizSourceUrl);
 }
 
-/* =========================
- * Rendering
- * ========================= */
+/* rendering */
 function setHeader(quiz, sourceUrl) {
   appTitle.textContent = quiz.title || "Quiz";
   const meta = [];
@@ -255,11 +156,9 @@ function renderQuiz(quiz, sourceUrl) {
 
     const head = document.createElement("div");
     head.className = "qhead";
-
     const left = document.createElement("div");
     left.innerHTML = `<div class="qid">${escapeHtml(item.id)}</div>`;
     head.appendChild(left);
-
     head.appendChild(renderTags(item.tags || []));
     card.appendChild(head);
 
@@ -297,11 +196,9 @@ function renderQuiz(quiz, sourceUrl) {
     const sum = document.createElement("summary");
     sum.textContent = "正解・解説";
     details.appendChild(sum);
-
     const ans = document.createElement("div");
     ans.dataset.role = "answersContent";
     details.appendChild(ans);
-
     card.appendChild(details);
 
     app.appendChild(card);
@@ -326,8 +223,7 @@ function renderItemBody(item) {
   if (item.type === "mcq" || item.type === "article") {
     const box = document.createElement("div");
     box.className = "choices";
-    const choices = item.choices || [];
-    for (const c of choices) {
+    for (const c of (item.choices || [])) {
       const row = document.createElement("label");
       row.className = "choice";
       const radio = document.createElement("input");
@@ -352,7 +248,6 @@ function renderItemBody(item) {
     ta.value = userAnswers[item.id] ?? "";
     ta.addEventListener("input", () => { userAnswers[item.id] = ta.value; });
     wrap.appendChild(ta);
-
     const small = document.createElement("div");
     small.className = "small";
     small.textContent = "※英作文は完全一致ではなく、最低限の自動判定（許容解答/簡易チェック）です。";
@@ -362,10 +257,8 @@ function renderItemBody(item) {
 
   if (item.type === "reorder") {
     const st = reorderState[item.id] || { availableTokens: [], chosenTokens: [] };
-
     const tokensBox = document.createElement("div");
     tokensBox.className = "tokens";
-
     const answerLine = document.createElement("div");
     answerLine.className = "answerline";
 
@@ -408,6 +301,10 @@ function renderItemBody(item) {
     wrap.appendChild(tokensBox);
     wrap.appendChild(answerLine);
 
+    const spacer = document.createElement("div");
+    spacer.style.marginTop = "10px";
+    wrap.appendChild(spacer);
+
     const btn = document.createElement("button");
     btn.textContent = "並べかえをクリア";
     btn.addEventListener("click", () => {
@@ -416,9 +313,6 @@ function renderItemBody(item) {
       userAnswers[item.id] = [];
       render();
     });
-    const spacer = document.createElement("div");
-    spacer.style.marginTop = "10px";
-    wrap.appendChild(spacer);
     wrap.appendChild(btn);
 
     return wrap;
@@ -428,15 +322,9 @@ function renderItemBody(item) {
   return wrap;
 }
 
-/* =========================
- * Grading
- * ========================= */
+/* grading */
 function normalizeSimple(s) {
-  return (s ?? "")
-    .toString()
-    .trim()
-    .replace(/\s+/g, " ")
-    .toLowerCase();
+  return (s ?? "").toString().trim().replace(/\s+/g, " ").toLowerCase();
 }
 
 function gradeItem(item) {
@@ -471,7 +359,6 @@ function gradeItem(item) {
 
     let score = 0;
     const feedback = [];
-
     if (!gotRaw) return { correct: false, message: "未入力", score: 0, feedback };
 
     if (/\byesterday\b/i.test(gotRaw)) score += 2;
@@ -487,7 +374,6 @@ function gradeItem(item) {
 
     const correct = exactOk || score >= 4;
     const msg = exactOk ? "正解（許容解答と一致）" : `採点：${score}/5（自動判定）`;
-
     return { correct, message: msg, score, feedback };
   }
 
@@ -496,7 +382,6 @@ function gradeItem(item) {
 
 function renderResults() {
   if (!currentQuiz) return;
-
   let correctCount = 0;
 
   for (const item of currentQuiz.items) {
@@ -533,7 +418,6 @@ function renderAnswerPanels() {
     const card = app.querySelector(`[data-item-id="${item.id}"]`);
     const panel = card.querySelector(`[data-role="answersPanel"]`);
     const content = card.querySelector(`[data-role="answersContent"]`);
-
     content.innerHTML = "";
 
     const p = document.createElement("div");
@@ -556,7 +440,6 @@ function renderAnswerPanels() {
       p.innerHTML = `<div><strong>許容解答例:</strong></div>`;
       p.appendChild(ul);
     }
-
     content.appendChild(p);
 
     if (item.explanation) {
@@ -568,7 +451,7 @@ function renderAnswerPanels() {
     }
 
     panel.style.display = showAnswers ? "block" : "none";
-    panel.open = showAnswers; // トグルON時は自動展開
+    panel.open = showAnswers;
   }
 }
 
@@ -577,9 +460,17 @@ function applyAnswersVisibility() {
   renderAnswerPanels();
 }
 
-/* =========================
- * Logging (attempt snapshot)
- * ========================= */
+/* logging helper */
+function resultToQuality(item, r) {
+  if (!r) return 0;
+  if (item.type === "translation" && typeof r.score === "number") {
+    if (r.score >= 5) return 5;
+    if (r.score >= 4) return 4;
+    return 2;
+  }
+  return r.correct ? 5 : 2;
+}
+
 function computeSummary() {
   const total = currentQuiz?.items?.length ?? 0;
   let correct = 0;
@@ -590,55 +481,61 @@ function computeSummary() {
     const r = resultState[item.id];
     if (!r) continue;
     if (r.correct) correct++;
-    if (typeof r.score === "number") {
-      scoreSum += r.score;
-      scoreItems++;
-    }
+    if (typeof r.score === "number") { scoreSum += r.score; scoreItems++; }
   }
-  return {
-    total,
-    correct,
-    scoreSum,
-    scoreItems
-  };
+  return { total, correct, scoreSum, scoreItems };
 }
 
-async function logAttempt() {
-  if (!currentQuiz) return;
+async function logAndUpdateEngine() {
+  const quizId = currentQuiz.quizId || currentQuiz.title || "unknown";
+  const itemMeta = {};
+  const qualityMap = {};
+
+  for (const it of (currentQuiz.items || [])) {
+    itemMeta[it.id] = { tags: Array.isArray(it.tags) ? it.tags : [], type: it.type || "" };
+    const q = resultToQuality(it, resultState[it.id]);
+    qualityMap[it.id] = { quality: q, tags: itemMeta[it.id].tags };
+  }
 
   const sum = computeSummary();
+
   const attempt = {
     ts: Date.now(),
-    quizId: currentQuiz.quizId || currentQuiz.title || "unknown",
+    quizId,
     quizTitle: currentQuiz.title || "",
     quizSourceUrl: currentQuizSourceUrl || "",
     total: sum.total,
     correct: sum.correct,
-    // translation がある場合に参考で入れる（なければ 0/0）
     scoreSum: sum.scoreSum,
     scoreItems: sum.scoreItems,
+    itemMeta,
     userAnswers: structuredClone(userAnswers),
     resultState: structuredClone(resultState)
   };
 
-  await addAttempt(attempt);
+  await StudyEngine.addAttempt(attempt);
+  await StudyEngine.updateCardsFromAttempt({
+    quizId,
+    quizTitle: currentQuiz.title || "",
+    quizSourceUrl: currentQuizSourceUrl || "",
+    qualityMap
+  });
 }
 
+/* history UI */
 function formatTs(ts) {
   const d = new Date(ts);
-  // ローカル表示
   return d.toLocaleString();
 }
 
 async function refreshHistory() {
   try {
-    const rows = await listAttempts(50);
+    const rows = await StudyEngine.listAttempts(50);
     if (!rows.length) {
       historyList.innerHTML = "履歴なし";
       return;
     }
 
-    // シンプルなカード一覧（復元ボタン付き）
     const html = rows.map(r => {
       const pct = r.total ? Math.round((r.correct / r.total) * 100) : 0;
       const scoreInfo = (r.scoreItems > 0) ? ` / 英作文スコア合計: ${r.scoreSum}` : "";
@@ -662,50 +559,44 @@ async function refreshHistory() {
 
     historyList.innerHTML = html;
 
-    // restore handlers
     historyList.querySelectorAll('button[data-action="restore"]').forEach(btn => {
       btn.addEventListener("click", async () => {
         const id = Number(btn.dataset.id);
-        const rows2 = await listAttempts(200); // 簡単に再取得して探索
+        const rows2 = await StudyEngine.listAttempts(200);
         const rec = rows2.find(x => x.id === id);
         if (!rec) return;
 
-        // 1) クイズをロード（同じURLがあるなら優先）
+        // quiz load
         if (rec.quizSourceUrl) {
           try {
             await loadQuizFromUrl(rec.quizSourceUrl);
           } catch {
-            // 取得失敗でも、すでに読み込み済みなら続行しない（ここでは終了）
-            app.innerHTML = `<div class="card">復元失敗：クイズJSONが取得できませんでした。URLや公開状態を確認してください。</div>`;
+            app.innerHTML = `<div class="card">復元失敗：クイズJSONが取得できませんでした。</div>`;
             return;
           }
         }
 
-        // 2) 回答・結果を復元
         userAnswers = rec.userAnswers || {};
         resultState = rec.resultState || {};
 
-        // reorder の内部状態も userAnswers から復元（選択済みtokens）
+        // restore reorder state from userAnswers
         initReorderState(currentQuiz);
         for (const item of (currentQuiz.items || [])) {
           if (item.type !== "reorder") continue;
           const st = reorderState[item.id];
           const chosen = Array.isArray(userAnswers[item.id]) ? userAnswers[item.id] : [];
           st.chosenTokens = [...chosen];
-          // available = tokens から chosen を引いた残り（順序は元 tokens を維持）
           const setChosen = new Set(chosen);
           st.availableTokens = (item.tokens || []).filter(t => !setChosen.has(t));
         }
 
-        // 3) UI再描画
         renderQuiz(currentQuiz, currentQuizSourceUrl);
         renderResults();
 
-        // 4) 採点後状態として解説を自動表示
+        // auto show answers on restore
         toggleAnswers.checked = true;
         applyAnswersVisibility();
 
-        // 5) 結果を見やすいように上へ
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
@@ -715,33 +606,134 @@ async function refreshHistory() {
   }
 }
 
-/* =========================
- * Events
- * ========================= */
+/* insights + recommend UI */
+async function refreshInsights() {
+  try {
+    const attempts = await StudyEngine.listAttempts(200);
+    if (!attempts.length) {
+      insightsDiv.textContent = "履歴なし（採点すると蓄積されます）";
+      return;
+    }
+
+    const due = await StudyEngine.listDueCards(9999, Date.now());
+    const dueCount = due.length;
+
+    const { worstItems, quizzes, worstTags } = StudyEngine.analyzeAttempts(attempts);
+
+    let html = "";
+    html += `<div><strong>復習期限（Due）:</strong> ${dueCount} 問</div>`;
+
+    html += `<div style="margin-top:8px;"><strong>苦手問題（正答率が低い順 上位10）</strong></div><ol>`;
+    for (const w of worstItems) {
+      html += `<li>${escapeHtml(w.key)} — ${w.correct}/${w.attempts} (${Math.round(w.acc * 100)}%)</li>`;
+    }
+    html += `</ol>`;
+
+    html += `<div style="margin-top:10px;"><strong>苦手タグ（正答率が低い順 上位10）</strong></div>`;
+    if (worstTags.length) {
+      html += `<ul>`;
+      for (const t of worstTags) {
+        html += `<li>${escapeHtml(t.tag)} — ${t.correct}/${t.attempts} (${Math.round(t.acc * 100)}%)</li>`;
+      }
+      html += `</ul>`;
+    } else {
+      html += `<div><em>タグ分析は新しい採点ログから貯まります（古い履歴にはtagが無い場合があります）。</em></div>`;
+    }
+
+    html += `<div style="margin-top:10px;"><strong>クイズ別 正答率（低い順）</strong></div><ul>`;
+    for (const q of quizzes) {
+      html += `<li>${escapeHtml(q.quizId)} — ${q.correct}/${q.total} (${Math.round(q.acc * 100)}%)</li>`;
+    }
+    html += `</ul>`;
+
+    insightsDiv.innerHTML = html;
+  } catch (e) {
+    insightsDiv.textContent = `分析エラー: ${e.message}`;
+  }
+}
+
+function quizIdToUrl(quizId) {
+  // index.json の id と quiz.quizId が一致している前提が一番きれい。
+  const hit = quizListCache.find(q => (q.id || "") === quizId);
+  return hit ? hit.url : null;
+}
+
+async function refreshRecommendations() {
+  try {
+    const due = await StudyEngine.listDueCards(12, Date.now());
+    if (!due.length) {
+      recDiv.innerHTML = `おすすめなし（今すぐ復習すべきカードはありません）`;
+      return;
+    }
+
+    let html = `<div><strong>今やるべき（Due）</strong></div><ol>`;
+    for (const c of due) {
+      html += `<li>
+        ${escapeHtml(c.quizId)} / ${escapeHtml(c.itemId)}
+        <span class="small">— ${escapeHtml(StudyEngine.dueLabel(c.dueTs))} / reps=${c.reps ?? 0} / ease=${(c.ease ?? 0).toFixed?.(2) ?? c.ease}</span>
+        <button style="margin-left:8px;" data-action="jump" data-quiz="${escapeHtml(c.quizId)}" data-item="${escapeHtml(c.itemId)}">開く</button>
+      </li>`;
+    }
+    html += `</ol>`;
+    recDiv.innerHTML = html;
+
+    recDiv.querySelectorAll('button[data-action="jump"]').forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const quizId = btn.dataset.quiz;
+        const itemId = btn.dataset.item;
+
+        const curId = (currentQuiz?.quizId || currentQuiz?.title || "unknown");
+        if (curId !== quizId) {
+          const url = quizIdToUrl(quizId);
+          if (!url) {
+            alert("この quizId を一覧から逆引きできません。index.json の id と quizId を合わせてください。");
+            return;
+          }
+          await loadQuizFromUrl(url);
+          // URLパラメータ更新
+          const u = new URL(location.href);
+          u.searchParams.set("quiz", absUrl(url));
+          history.replaceState(null, "", u.toString());
+        }
+
+        // 該当問題へスクロール
+        const card = app.querySelector(`[data-item-id="${CSS.escape(itemId)}"]`);
+        if (card) card.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+  } catch (e) {
+    recDiv.textContent = `おすすめエラー: ${e.message}`;
+  }
+}
+
+/* events */
 toggleAnswers.addEventListener("change", applyAnswersVisibility);
 
 btnGrade.addEventListener("click", async () => {
   if (!currentQuiz) return;
 
-  // 採点
+  // grade
   resultState = {};
   for (const item of currentQuiz.items) {
     resultState[item.id] = gradeItem(item);
   }
   renderResults();
 
-  // ✅ 採点したら自動で「正解・解説」表示（トグルON＋展開）
+  // auto show answers
   toggleAnswers.checked = true;
   applyAnswersVisibility();
 
-  // ✅ ログ保存
+  // log + update spaced repetition
   try {
-    await logAttempt();
-    await refreshHistory();
+    await logAndUpdateEngine();
   } catch (e) {
-    // ログ保存失敗は学習を止めない（表示だけ）
-    console.warn("logAttempt failed:", e);
+    console.warn("log/update failed:", e);
   }
+
+  await refreshHistory();
+  await refreshInsights();
+  await refreshRecommendations();
 });
 
 btnReset.addEventListener("click", () => {
@@ -786,26 +778,33 @@ btnClearHistory?.addEventListener("click", async () => {
   const ok = confirm("履歴を全削除します。よろしいですか？");
   if (!ok) return;
   try {
-    await clearAttempts();
+    await StudyEngine.clearAttempts();
     await refreshHistory();
+    await refreshInsights();
+    await refreshRecommendations();
   } catch (e) {
     alert("削除に失敗しました: " + e.message);
   }
 });
 
-/* =========================
- * Boot
- * ========================= */
+btnRefreshInsights?.addEventListener("click", refreshInsights);
+btnRecommend?.addEventListener("click", refreshRecommendations);
+
+/* boot */
 async function boot() {
   app.innerHTML = `<div class="card">Loading…</div>`;
   historyList.textContent = "Loading history…";
+  insightsDiv.textContent = "Loading insights…";
+  recDiv.textContent = "Loading recommendations…";
 
-  // 履歴を先に表示（クイズ読込失敗でも見れる）
+  // always show persisted views first
   refreshHistory();
+  refreshInsights();
+  refreshRecommendations();
 
   try {
-    const list = await loadQuizList();
-    renderQuizSelect(list);
+    quizListCache = await loadQuizList();
+    renderQuizSelect(quizListCache);
 
     const { quiz } = getParams();
     if (quiz) {
