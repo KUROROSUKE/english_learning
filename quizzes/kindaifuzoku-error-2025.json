@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "quizId": "kindaifuzoku-error-2025",
+  "title": "金大附属 誤文訂正（想定年度B）",
+  "target": "金沢大学附属高校 入試対策",
+  "items": [
+    {
+      "id": "E1",
+      "type": "mcq",
+      "prompt": "I have[A] finished[B] to do[C] my homework[D].",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "C",
+      "explanation": "finish の後は動名詞。",
+      "difficulty": 3
+    },
+    {
+      "id": "E2",
+      "type": "mcq",
+      "prompt": "She[A] has[B] lived[C] here[D] since five years.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "D",
+      "explanation": "期間には since ではなく for。",
+      "difficulty": 3
+    },
+    {
+      "id": "E3",
+      "type": "mcq",
+      "prompt": "This is[A] the student[B] who[C] I met[D] yesterday.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "C",
+      "explanation": "目的格なので who は不可（that/whom）。",
+      "difficulty": 4
+    },
+    {
+      "id": "E4",
+      "type": "mcq",
+      "prompt": "We[A] didn’t[B] know[C] where was he[D].",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "D",
+      "explanation": "間接疑問文の語順。",
+      "difficulty": 4
+    },
+    {
+      "id": "E5",
+      "type": "mcq",
+      "prompt": "He[A] is[B] interested[C] in[D] play soccer.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "D",
+      "explanation": "前置詞の後は動名詞。",
+      "difficulty": 3
+    }
+  ]
+}
