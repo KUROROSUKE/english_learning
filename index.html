@@ -70,6 +70,26 @@
   </div>
 </section>
 
+  <section class="panel" id="insightsPanel">
+  <div class="row">
+    <div class="field grow">
+      <label>弱点分析・おすすめ（忘却曲線ベース）</label>
+      <div class="small">設問ごとに次回の推奨タイミング（due）を計算し、今日やるべき問題を提示します。</div>
+    </div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <button id="btnRefreshInsights">更新</button>
+    </div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <button id="btnStartDueSession">今日のおすすめだけ表示</button>
+    </div>
+  </div>
+
+  <div id="insightsBox" class="small" style="margin-top:10px;">Loading…</div>
+</section>
+
+
   <main id="app" class="app">
     <div class="card">Loading…</div>
   </main>
