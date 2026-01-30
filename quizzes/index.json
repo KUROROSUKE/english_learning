@@ -1,35 +1,7 @@
 {
   "version": "1.0",
-  "description": "高校入試 英語（過去問再構成・入試準拠）クイズ一覧",
+  "description": "金大附属高校（石川）英語対策：形式準拠・実戦演習クイズ一覧",
   "quizzes": [
-    {
-      "id": "hs-entrance-grammar-authentic-001",
-      "title": "高校入試 英語 文法・語法テスト（過去問再構成）",
-      "level": "公立・私立 標準〜やや難",
-      "tags": ["grammar", "usage", "entrance-exam"],
-      "url": "./hs-entrance-grammar-authentic-001.json"
-    },
-    {
-      "id": "hs-entrance-grammar-authentic-001.json",
-      "title": "高校受験 英語 文法テスト（入試準拠・改訂）",
-      "level": "公立 標準",
-      "tags": ["grammar", "basic", "entrance-exam"],
-      "url": "./hs-entrance-grammar-003.json"
-    },
-    {
-      "id": "hs-entrance-grammar-002",
-      "title": "高校受験 英語 文法ミニテスト（難しめ）",
-      "level": "私立・上位校向け",
-      "tags": ["grammar", "advanced", "entrance-exam"],
-      "url": "./hs-entrance-grammar-002.json"
-    },
-    {
-      "id": "hs-entrance-grammar-001",
-      "title": "高校受験 英語 文法ミニテスト（基礎）",
-      "level": "公立 基礎",
-      "tags": ["grammar", "basic"],
-      "url": "./hs-entrance-grammar-001.json"
-    },
     {
       "id": "kindaifuzoku-english-practice-001",
       "title": "金大附属 英語（形式準拠・実戦演習）",
