@@ -59,7 +59,7 @@
     {
       "id": "E3",
       "type": "mcq",
-      "prompt": "My A[brother] B[is] C[taller] D[than] I.",
+      "prompt": "My A[brother] B[is] C[taller] than D[me].",
       "choices": [
         {
           "id": "A",
