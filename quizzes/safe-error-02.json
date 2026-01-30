@@ -1,6 +1,7 @@
 {
-  "version": "1.0",
-  "type": "error-correction",
+  "version": "1.2",
+  "quizId": "safe-error-02",
+  "title": "safe-error-02",
   "items": [
     {
       "id": "Q21",
@@ -9,23 +10,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "often"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "go"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "library"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "after"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：go（三単現）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：goes"
     },
     {
       "id": "Q22",
@@ -34,23 +35,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "like"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "read"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "books"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "night"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：read（動名詞）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：reading"
     },
     {
       "id": "Q23",
@@ -59,23 +60,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "can"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "plays"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "piano"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "well"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：plays（助動詞）"
+      "explanation": "正しくは：play"
     },
     {
       "id": "Q24",
@@ -84,23 +85,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "busy"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "do"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "homework"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "now"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：do（busy to）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：to do"
     },
     {
       "id": "Q25",
@@ -109,23 +110,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "There"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "is"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "many"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "people"
         }
       ],
-      "answerChoiceId": "A",
-      "note": "誤り語：is（there is/are）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：are"
     },
     {
       "id": "Q26",
@@ -134,23 +135,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "surprised"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "hear"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "news"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "was"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：hear（to不定詞）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：to hear"
     },
     {
       "id": "Q27",
@@ -159,23 +160,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "enjoys"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "listen"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "music"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "room"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：listen（動名詞）"
+      "explanation": "正しくは：listening"
     },
     {
       "id": "Q28",
@@ -184,23 +185,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "enough"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "big"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "for"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "me"
         }
       ],
-      "answerChoiceId": "B",
-      "note": "誤り語：enough（語順）"
+      "answerChoiceId": "A",
+      "explanation": "正しくは：big enough"
     },
     {
       "id": "Q29",
@@ -209,23 +210,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "stopped"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "smoke"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "last"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "year"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：smoke（動名詞）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：smoking"
     },
     {
       "id": "Q30",
@@ -234,23 +235,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "used"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "to"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "wake"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "early"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：wake（to＋ing）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：waking"
     },
     {
       "id": "Q31",
@@ -259,23 +260,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "made"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "brother"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "washes"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "dishes"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：washes（原形）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：wash"
     },
     {
       "id": "Q32",
@@ -284,23 +285,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "tallest"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "student"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "of"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "class"
         }
       ],
       "answerChoiceId": "C",
-      "note": "誤り語：of（in）"
+      "explanation": "正しくは：in"
     },
     {
       "id": "Q33",
@@ -309,23 +310,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "because"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "of"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "won"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "game"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：of（because）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：delete 'of'"
     },
     {
       "id": "Q34",
@@ -334,23 +335,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "idea"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "what"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "is"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "saying"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：is（間接疑問）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：he is"
     },
     {
       "id": "Q35",
@@ -359,23 +360,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "finish"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "homework"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "quick"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "has"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：quick（副詞）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：quickly"
     },
     {
       "id": "Q36",
@@ -384,23 +385,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "how"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "can"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "solve"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "problem"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：can（間接疑問）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：could"
     },
     {
       "id": "Q37",
@@ -409,23 +410,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "first"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "time"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "meet"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "him"
         }
       ],
       "answerChoiceId": "C",
-      "note": "誤り語：meet（現在完了）"
+      "explanation": "正しくは：have met"
     },
     {
       "id": "Q38",
@@ -434,23 +435,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "speaks"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "good"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "for"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "age"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：good（well）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：well"
     },
     {
       "id": "Q39",
@@ -459,23 +460,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "gave"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "a"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "advice"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "test"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：a（不可算）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：delete 'a'"
     },
     {
       "id": "Q40",
@@ -484,23 +485,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "glad"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "that"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "to"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "again"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：to（that節）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：delete 'to'"
     }
   ]
 }

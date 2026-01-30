@@ -1,6 +1,7 @@
 {
-  "version": "1.0",
-  "type": "error-correction",
+  "version": "1.2",
+  "quizId": "safe-error-03",
+  "title": "safe-error-03",
   "items": [
     {
       "id": "Q41",
@@ -9,23 +10,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "usually"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "take"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "bus"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "school"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：take（三単現）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：takes"
     },
     {
       "id": "Q42",
@@ -34,23 +35,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "doesn’t"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "wants"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "join"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "club"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：wants（助動詞）"
+      "explanation": "正しくは：want"
     },
     {
       "id": "Q43",
@@ -59,23 +60,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "hope"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "soon"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "again"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "see"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：soon（語順）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：again soon"
     },
     {
       "id": "Q44",
@@ -84,23 +85,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "good"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "at"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "play"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "basketball"
         }
       ],
       "answerChoiceId": "C",
-      "note": "誤り語：play（動名詞）"
+      "explanation": "正しくは：playing"
     },
     {
       "id": "Q45",
@@ -109,23 +110,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "were"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "little"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "people"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "meeting"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：little（few）"
+      "explanation": "正しくは：few"
     },
     {
       "id": "Q46",
@@ -134,23 +135,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "decided"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "study"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "abroad"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "year"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：study（to不定詞）"
+      "explanation": "正しくは：to study"
     },
     {
       "id": "Q47",
@@ -159,23 +160,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "made"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "sister"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "cries"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "loudly"
         }
       ],
       "answerChoiceId": "C",
-      "note": "誤り語：cries（原形）"
+      "explanation": "正しくは：cry"
     },
     {
       "id": "Q48",
@@ -184,23 +185,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "afraid"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "to"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "dogs"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "am"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：to（of）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：of"
     },
     {
       "id": "Q49",
@@ -209,23 +210,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "too"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "difficult"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "for"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "read"
         }
       ],
       "answerChoiceId": "D",
-      "note": "誤り語：read（to不定詞）"
+      "explanation": "正しくは：to read"
     },
     {
       "id": "Q50",
@@ -234,23 +235,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "looks"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "happily"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "when"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "sees"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：happily（形容詞）"
+      "explanation": "正しくは：happy"
     },
     {
       "id": "Q51",
@@ -259,23 +260,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "kind"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "enough"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "helping"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "me"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：helping（to不定詞）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：to help"
     },
     {
       "id": "Q52",
@@ -284,23 +285,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "know"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "what"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "does"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "want"
         }
       ],
       "answerChoiceId": "C",
-      "note": "誤り語：does（間接疑問）"
+      "explanation": "正しくは：she wants"
     },
     {
       "id": "Q53",
@@ -309,23 +310,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "lot"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "homeworks"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "today"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "has"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：homeworks（不可算）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：homework"
     },
     {
       "id": "Q54",
@@ -334,23 +335,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "gave"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "some"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "advices"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "father"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：advices（不可算）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：advice"
     },
     {
       "id": "Q55",
@@ -359,23 +360,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "taller"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "than"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "any"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "student"
         }
       ],
-      "answerChoiceId": "D",
-      "note": "誤り語：any（any other）"
+      "answerChoiceId": "C",
+      "explanation": "正しくは：any other"
     },
     {
       "id": "Q56",
@@ -384,23 +385,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "asked"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "why"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "did"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "come"
         }
       ],
       "answerChoiceId": "C",
-      "note": "誤り語：did（間接疑問）"
+      "explanation": "正しくは：came"
     },
     {
       "id": "Q57",
@@ -409,23 +410,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "surprised"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "at"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "hear"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "result"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：at（to）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：to"
     },
     {
       "id": "Q58",
@@ -434,23 +435,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "enjoyed"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "watch"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "movie"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "together"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：watch（動名詞）"
+      "explanation": "正しくは：watching"
     },
     {
       "id": "Q59",
@@ -459,23 +460,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "didn’t"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "came"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "school"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "yesterday"
         }
       ],
       "answerChoiceId": "B",
-      "note": "誤り語：came（原形）"
+      "explanation": "正しくは：come"
     },
     {
       "id": "Q60",
@@ -484,23 +485,23 @@
       "choices": [
         {
           "id": "A",
-          "text": "A"
+          "text": "difficulty"
         },
         {
           "id": "B",
-          "text": "B"
+          "text": "understand"
         },
         {
           "id": "C",
-          "text": "C"
+          "text": "English"
         },
         {
           "id": "D",
-          "text": "D"
+          "text": "has"
         }
       ],
-      "answerChoiceId": "C",
-      "note": "誤り語：understand（動名詞）"
+      "answerChoiceId": "B",
+      "explanation": "正しくは：understanding"
     }
   ]
 }
