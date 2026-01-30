@@ -7,7 +7,7 @@
     {
       "id": "E1",
       "type": "mcq",
-      "prompt": "I have[A] finished[B] to do[C] my homework[D].",
+      "prompt": "I A[have] B[finished] to C[do] my D[homework].",
       "choices": [
         {
           "id": "A",
@@ -33,7 +33,7 @@
     {
       "id": "E2",
       "type": "mcq",
-      "prompt": "She[A] has[B] lived[C] here[D] since five years.",
+      "prompt": "A[She] B[has] C[lived] D[here] since five years.",
       "choices": [
         {
           "id": "A",
@@ -59,7 +59,7 @@
     {
       "id": "E3",
       "type": "mcq",
-      "prompt": "This is[A] the student[B] who[C] I met[D] yesterday.",
+      "prompt": "This A[is] the B[student] C[who] I D[met] yesterday.",
       "choices": [
         {
           "id": "A",
@@ -85,7 +85,7 @@
     {
       "id": "E4",
       "type": "mcq",
-      "prompt": "We[A] didn’t[B] know[C] where was he[D].",
+      "prompt": "A[We] B[didn’t] C[know] where was D[he].",
       "choices": [
         {
           "id": "A",
@@ -111,7 +111,7 @@
     {
       "id": "E5",
       "type": "mcq",
-      "prompt": "He[A] is[B] interested[C] in[D] play soccer.",
+      "prompt": "A[He] B[is] C[interested] D[in] play soccer.",
       "choices": [
         {
           "id": "A",
