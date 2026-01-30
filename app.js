@@ -3,15 +3,22 @@
  *  - "hardcoded" : app.js に一覧を直書き
  *  - "index"     : quizzes/index.json を fetch して一覧を取得（推奨）
  * ========================= */
-const QUIZ_LIST_MODE = "index"; // ← ここを "hardcoded" か "index" に
+const QUIZ_LIST_MODE = "index"; // "hardcoded" or "index"
 
 /* hardcoded 用（必要ならここを編集） */
 const HARDCODED_QUIZZES = [
-  // 例: { id: "hs-entrance-grammar-001", title: "高校受験 英語 文法ミニテスト", url: "./quizzes/hs-entrance-grammar-001.json" }
+  // { id: "hs-entrance-grammar-001", title: "高校受験 英語 文法ミニテスト", url: "./quizzes/hs-entrance-grammar-001.json" }
 ];
 
 /* index 用：デフォルトの index.json 位置 */
 const DEFAULT_INDEX_URL = "./quizzes/index.json";
+
+/* =========================
+ * IndexedDB settings
+ * ========================= */
+const DB_NAME = "quiz_app_db";
+const DB_VERSION = 1;
+const STORE_ATTEMPTS = "attempts";
 
 /* =========================
  * DOM
@@ -28,12 +35,17 @@ const btnGrade = $("#btnGrade");
 const btnReset = $("#btnReset");
 const toggleAnswers = $("#toggleAnswers");
 
+const btnRefreshHistory = $("#btnRefreshHistory");
+const btnClearHistory = $("#btnClearHistory");
+const historyList = $("#historyList");
+
 /* =========================
  * State
  * ========================= */
 let currentQuiz = null;
-let userAnswers = {};     // itemId -> answer payload
-let resultState = {};     // itemId -> {correct, message, score?}
+let currentQuizSourceUrl = null; // ログに残す用
+let userAnswers = {};            // itemId -> answer payload
+let resultState = {};            // itemId -> {correct, message, score?}
 let showAnswers = false;
 
 /* reorder 用: itemId -> {availableTokens: string[], chosenTokens: string[]} */
@@ -60,9 +72,83 @@ async function fetchJson(url) {
 }
 
 function absUrl(url) {
-  // relative を絶対化（表示や記録に便利）
   try { return new URL(url, location.href).toString(); }
   catch { return url; }
+}
+
+function escapeHtml(s) {
+  return (s ?? "").toString()
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+/* =========================
+ * IndexedDB helpers
+ * ========================= */
+function openDb() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onerror = () => reject(req.error);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains(STORE_ATTEMPTS)) {
+        const store = db.createObjectStore(STORE_ATTEMPTS, { keyPath: "id", autoIncrement: true });
+        store.createIndex("by_ts", "ts");
+        store.createIndex("by_quizId_ts", ["quizId", "ts"]);
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+  });
+}
+
+async function addAttempt(attempt) {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_ATTEMPTS, "readwrite");
+    tx.oncomplete = () => resolve(true);
+    tx.onerror = () => reject(tx.error);
+
+    const store = tx.objectStore(STORE_ATTEMPTS);
+    store.add(attempt);
+  });
+}
+
+async function listAttempts(limit = 50) {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_ATTEMPTS, "readonly");
+    tx.onerror = () => reject(tx.error);
+
+    const store = tx.objectStore(STORE_ATTEMPTS);
+    const idx = store.index("by_ts");
+
+    // 新しい順に取りたいので cursor を "prev"
+    const req = idx.openCursor(null, "prev");
+    const out = [];
+    req.onerror = () => reject(req.error);
+    req.onsuccess = () => {
+      const cursor = req.result;
+      if (!cursor || out.length >= limit) {
+        resolve(out);
+        return;
+      }
+      out.push(cursor.value);
+      cursor.continue();
+    };
+  });
+}
+
+async function clearAttempts() {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_ATTEMPTS, "readwrite");
+    tx.onerror = () => reject(tx.error);
+    tx.oncomplete = () => resolve(true);
+    tx.objectStore(STORE_ATTEMPTS).clear();
+  });
 }
 
 /* =========================
@@ -70,12 +156,10 @@ function absUrl(url) {
  * ========================= */
 async function loadQuizList() {
   const { index } = getParams();
-  if (QUIZ_LIST_MODE === "hardcoded") {
-    return HARDCODED_QUIZZES;
-  }
+  if (QUIZ_LIST_MODE === "hardcoded") return HARDCODED_QUIZZES;
+
   const indexUrl = index || DEFAULT_INDEX_URL;
   const data = await fetchJson(indexUrl);
-  // 想定形式: { quizzes: [{id,title,url}, ...] }  or  [{...}]
   const list = Array.isArray(data) ? data : (data.quizzes || []);
   return list.map(q => ({ ...q, url: q.url }));
 }
@@ -126,12 +210,14 @@ function initReorderState(quiz) {
 
 async function loadQuizFromUrl(url) {
   const quiz = await fetchJson(url);
-  // 最低限のバリデーション
   if (!quiz || !Array.isArray(quiz.items)) throw new Error("quiz JSONの形式が不正です（items が必要）");
+
   currentQuiz = quiz;
+  currentQuizSourceUrl = absUrl(url);
+
   resetState();
   initReorderState(quiz);
-  renderQuiz(quiz, absUrl(url));
+  renderQuiz(quiz, currentQuizSourceUrl);
 }
 
 /* =========================
@@ -171,7 +257,7 @@ function renderQuiz(quiz, sourceUrl) {
     head.className = "qhead";
 
     const left = document.createElement("div");
-    left.innerHTML = `<div class="qid">${item.id}</div>`;
+    left.innerHTML = `<div class="qid">${escapeHtml(item.id)}</div>`;
     head.appendChild(left);
 
     head.appendChild(renderTags(item.tags || []));
@@ -182,12 +268,10 @@ function renderQuiz(quiz, sourceUrl) {
     prompt.textContent = item.prompt || "";
     card.appendChild(prompt);
 
-    // type-specific UI
     const body = document.createElement("div");
     body.appendChild(renderItemBody(item));
     card.appendChild(body);
 
-    // note/hint
     if (item.note) {
       const note = document.createElement("div");
       note.className = "small";
@@ -201,14 +285,12 @@ function renderQuiz(quiz, sourceUrl) {
       card.appendChild(hint);
     }
 
-    // result area
     const result = document.createElement("div");
     result.className = "result";
     result.style.display = "none";
     result.dataset.role = "result";
     card.appendChild(result);
 
-    // answers/explanation (toggle)
     const details = document.createElement("details");
     details.style.display = "none";
     details.dataset.role = "answersPanel";
@@ -236,9 +318,7 @@ function renderItemBody(item) {
     input.type = "text";
     input.placeholder = "答えを入力";
     input.value = userAnswers[item.id] ?? "";
-    input.addEventListener("input", () => {
-      userAnswers[item.id] = input.value;
-    });
+    input.addEventListener("input", () => { userAnswers[item.id] = input.value; });
     wrap.appendChild(input);
     return wrap;
   }
@@ -255,9 +335,7 @@ function renderItemBody(item) {
       radio.name = `choice-${item.id}`;
       radio.value = c.id;
       radio.checked = (userAnswers[item.id] === c.id);
-      radio.addEventListener("change", () => {
-        userAnswers[item.id] = c.id;
-      });
+      radio.addEventListener("change", () => { userAnswers[item.id] = c.id; });
       const span = document.createElement("span");
       span.textContent = c.text;
       row.appendChild(radio);
@@ -272,9 +350,7 @@ function renderItemBody(item) {
     const ta = document.createElement("textarea");
     ta.placeholder = "英文を書いてください";
     ta.value = userAnswers[item.id] ?? "";
-    ta.addEventListener("input", () => {
-      userAnswers[item.id] = ta.value;
-    });
+    ta.addEventListener("input", () => { userAnswers[item.id] = ta.value; });
     wrap.appendChild(ta);
 
     const small = document.createElement("div");
@@ -325,7 +401,6 @@ function renderItemBody(item) {
         answerLine.appendChild(chip);
       }
 
-      // 初期状態なら userAnswers も同期
       userAnswers[item.id] = [...st.chosenTokens];
     };
 
@@ -341,7 +416,9 @@ function renderItemBody(item) {
       userAnswers[item.id] = [];
       render();
     });
-    wrap.appendChild(document.createElement("div")).style.marginTop = "10px";
+    const spacer = document.createElement("div");
+    spacer.style.marginTop = "10px";
+    wrap.appendChild(spacer);
     wrap.appendChild(btn);
 
     return wrap;
@@ -366,75 +443,50 @@ function gradeItem(item) {
   const id = item.id;
   const ua = userAnswers[id];
 
-  // reorder: tokens array exact match
   if (item.type === "reorder") {
     const got = Array.isArray(ua) ? ua : [];
     const ans = item.answer || [];
     const correct = got.length === ans.length && got.every((t, i) => t === ans[i]);
-    return {
-      correct,
-      message: correct ? "正解" : `不正解：${ans.join(" ")}`
-    };
+    return { correct, message: correct ? "正解" : `不正解：${ans.join(" ")}` };
   }
 
-  // fill: string exact (case-insensitive)
   if (item.type === "fill") {
     const got = normalizeSimple(ua);
     const ans = normalizeSimple(item.answer);
     const correct = got === ans;
-    return {
-      correct,
-      message: correct ? "正解" : `不正解：${item.answer}`,
-      explanation: item.explanation || ""
-    };
+    return { correct, message: correct ? "正解" : `不正解：${item.answer}`, explanation: item.explanation || "" };
   }
 
-  // mcq/article
   if (item.type === "mcq" || item.type === "article") {
     const correct = ua === item.answerChoiceId;
     const ansText = (item.choices || []).find(c => c.id === item.answerChoiceId)?.text ?? item.answerChoiceId;
-    return {
-      correct,
-      message: correct ? "正解" : `不正解：${ansText}`,
-      explanation: item.explanation || ""
-    };
+    return { correct, message: correct ? "正解" : `不正解：${ansText}`, explanation: item.explanation || "" };
   }
 
-  // translation: accept list (exact normalized) + very simple heuristics (optional)
   if (item.type === "translation") {
     const gotRaw = (ua ?? "").toString().trim();
     const got = normalizeSimple(gotRaw);
-
     const accept = (item.accept || []).map(normalizeSimple);
     const exactOk = accept.includes(got);
 
-    // 簡易スコア（5点満点想定）
     let score = 0;
     const feedback = [];
 
-    if (!gotRaw) {
-      return { correct: false, message: "未入力", score: 0, feedback };
-    }
+    if (!gotRaw) return { correct: false, message: "未入力", score: 0, feedback };
 
-    // time (yesterday)
     if (/\byesterday\b/i.test(gotRaw)) score += 2;
-    else feedback.push("yesterday が入ると時制が明確。");
+    else feedback.push("yesterday を入れると時制が明確。");
 
-    // win (won ... game/match)
     if (/\bwon\b/i.test(gotRaw) && /\b(game|match)\b/i.test(gotRaw)) score += 2;
     else feedback.push("won the game/match の形を入れると加点。");
 
-    // happy
     if (/\bhappy\b/i.test(gotRaw) && /\bwas\b/i.test(gotRaw)) score += 1;
     else feedback.push("I was happy ... の形にすると自然。");
 
-    // exactOk なら満点扱い
     if (exactOk) score = Math.max(score, 5);
 
-    const correct = exactOk || score >= 4; // 目安：4点以上なら「だいたいOK」扱い
-    const msg = exactOk
-      ? "正解（許容解答と一致）"
-      : `採点：${score}/5（自動判定）`;
+    const correct = exactOk || score >= 4;
+    const msg = exactOk ? "正解（許容解答と一致）" : `採点：${score}/5（自動判定）`;
 
     return { correct, message: msg, score, feedback };
   }
@@ -459,17 +511,15 @@ function renderResults() {
     const extra = [];
     if (typeof r.score === "number") extra.push(`Score: ${r.score}`);
     if (r.explanation) extra.push(r.explanation);
-    if (Array.isArray(r.feedback) && r.feedback.length) {
-      extra.push("ヒント: " + r.feedback.join(" / "));
-    }
+    if (Array.isArray(r.feedback) && r.feedback.length) extra.push("ヒント: " + r.feedback.join(" / "));
 
-    box.innerHTML = `<div><strong>${r.message}</strong></div>` +
-      (extra.length ? `<div class="small" style="margin-top:6px;">${extra.join("<br>")}</div>` : "");
+    box.innerHTML =
+      `<div><strong>${escapeHtml(r.message)}</strong></div>` +
+      (extra.length ? `<div class="small" style="margin-top:6px;">${extra.map(escapeHtml).join("<br>")}</div>` : "");
 
     if (r.correct) correctCount++;
   }
 
-  // header meta にサマリ追記
   const base = [];
   if (currentQuiz.target) base.push(`対象: ${currentQuiz.target}`);
   if (currentQuiz.timeLimitSec) base.push(`目安: ${currentQuiz.timeLimitSec}s`);
@@ -486,17 +536,16 @@ function renderAnswerPanels() {
 
     content.innerHTML = "";
 
-    // 正解表示
     const p = document.createElement("div");
     p.className = "small";
 
     if (item.type === "reorder") {
-      p.innerHTML = `<div><strong>正解:</strong> ${ (item.answer || []).join(" ") }</div>`;
+      p.innerHTML = `<div><strong>正解:</strong> ${escapeHtml((item.answer || []).join(" "))}</div>`;
     } else if (item.type === "fill") {
-      p.innerHTML = `<div><strong>正解:</strong> ${ item.answer }</div>`;
+      p.innerHTML = `<div><strong>正解:</strong> ${escapeHtml(item.answer)}</div>`;
     } else if (item.type === "mcq" || item.type === "article") {
       const ansText = (item.choices || []).find(c => c.id === item.answerChoiceId)?.text ?? item.answerChoiceId;
-      p.innerHTML = `<div><strong>正解:</strong> ${ ansText }</div>`;
+      p.innerHTML = `<div><strong>正解:</strong> ${escapeHtml(ansText)}</div>`;
     } else if (item.type === "translation") {
       const ul = document.createElement("ul");
       for (const a of (item.accept || [])) {
@@ -510,17 +559,16 @@ function renderAnswerPanels() {
 
     content.appendChild(p);
 
-    // 解説
     if (item.explanation) {
       const exp = document.createElement("div");
       exp.className = "small";
       exp.style.marginTop = "8px";
-      exp.innerHTML = `<strong>解説:</strong> ${item.explanation}`;
+      exp.innerHTML = `<strong>解説:</strong> ${escapeHtml(item.explanation)}`;
       content.appendChild(exp);
     }
 
     panel.style.display = showAnswers ? "block" : "none";
-    panel.open = showAnswers;
+    panel.open = showAnswers; // トグルON時は自動展開
   }
 }
 
@@ -530,26 +578,177 @@ function applyAnswersVisibility() {
 }
 
 /* =========================
+ * Logging (attempt snapshot)
+ * ========================= */
+function computeSummary() {
+  const total = currentQuiz?.items?.length ?? 0;
+  let correct = 0;
+  let scoreSum = 0;
+  let scoreItems = 0;
+
+  for (const item of (currentQuiz?.items || [])) {
+    const r = resultState[item.id];
+    if (!r) continue;
+    if (r.correct) correct++;
+    if (typeof r.score === "number") {
+      scoreSum += r.score;
+      scoreItems++;
+    }
+  }
+  return {
+    total,
+    correct,
+    scoreSum,
+    scoreItems
+  };
+}
+
+async function logAttempt() {
+  if (!currentQuiz) return;
+
+  const sum = computeSummary();
+  const attempt = {
+    ts: Date.now(),
+    quizId: currentQuiz.quizId || currentQuiz.title || "unknown",
+    quizTitle: currentQuiz.title || "",
+    quizSourceUrl: currentQuizSourceUrl || "",
+    total: sum.total,
+    correct: sum.correct,
+    // translation がある場合に参考で入れる（なければ 0/0）
+    scoreSum: sum.scoreSum,
+    scoreItems: sum.scoreItems,
+    userAnswers: structuredClone(userAnswers),
+    resultState: structuredClone(resultState)
+  };
+
+  await addAttempt(attempt);
+}
+
+function formatTs(ts) {
+  const d = new Date(ts);
+  // ローカル表示
+  return d.toLocaleString();
+}
+
+async function refreshHistory() {
+  try {
+    const rows = await listAttempts(50);
+    if (!rows.length) {
+      historyList.innerHTML = "履歴なし";
+      return;
+    }
+
+    // シンプルなカード一覧（復元ボタン付き）
+    const html = rows.map(r => {
+      const pct = r.total ? Math.round((r.correct / r.total) * 100) : 0;
+      const scoreInfo = (r.scoreItems > 0) ? ` / 英作文スコア合計: ${r.scoreSum}` : "";
+      const title = r.quizTitle || r.quizId;
+      return `
+        <div class="card" style="margin:10px 0;">
+          <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+            <div>
+              <div><strong>${escapeHtml(title)}</strong></div>
+              <div class="small">${escapeHtml(formatTs(r.ts))}</div>
+              <div class="small">得点: ${r.correct}/${r.total} (${pct}%)${scoreInfo}</div>
+              ${r.quizSourceUrl ? `<div class="small">Source: ${escapeHtml(r.quizSourceUrl)}</div>` : ""}
+            </div>
+            <div style="display:flex; gap:8px; align-items:flex-start; flex-wrap:wrap;">
+              <button data-action="restore" data-id="${r.id}">この結果を復元して表示</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    historyList.innerHTML = html;
+
+    // restore handlers
+    historyList.querySelectorAll('button[data-action="restore"]').forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const id = Number(btn.dataset.id);
+        const rows2 = await listAttempts(200); // 簡単に再取得して探索
+        const rec = rows2.find(x => x.id === id);
+        if (!rec) return;
+
+        // 1) クイズをロード（同じURLがあるなら優先）
+        if (rec.quizSourceUrl) {
+          try {
+            await loadQuizFromUrl(rec.quizSourceUrl);
+          } catch {
+            // 取得失敗でも、すでに読み込み済みなら続行しない（ここでは終了）
+            app.innerHTML = `<div class="card">復元失敗：クイズJSONが取得できませんでした。URLや公開状態を確認してください。</div>`;
+            return;
+          }
+        }
+
+        // 2) 回答・結果を復元
+        userAnswers = rec.userAnswers || {};
+        resultState = rec.resultState || {};
+
+        // reorder の内部状態も userAnswers から復元（選択済みtokens）
+        initReorderState(currentQuiz);
+        for (const item of (currentQuiz.items || [])) {
+          if (item.type !== "reorder") continue;
+          const st = reorderState[item.id];
+          const chosen = Array.isArray(userAnswers[item.id]) ? userAnswers[item.id] : [];
+          st.chosenTokens = [...chosen];
+          // available = tokens から chosen を引いた残り（順序は元 tokens を維持）
+          const setChosen = new Set(chosen);
+          st.availableTokens = (item.tokens || []).filter(t => !setChosen.has(t));
+        }
+
+        // 3) UI再描画
+        renderQuiz(currentQuiz, currentQuizSourceUrl);
+        renderResults();
+
+        // 4) 採点後状態として解説を自動表示
+        toggleAnswers.checked = true;
+        applyAnswersVisibility();
+
+        // 5) 結果を見やすいように上へ
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+  } catch (e) {
+    historyList.innerHTML = `履歴の読み込みエラー：${escapeHtml(e.message)}`;
+  }
+}
+
+/* =========================
  * Events
  * ========================= */
 toggleAnswers.addEventListener("change", applyAnswersVisibility);
 
-btnGrade.addEventListener("click", () => {
+btnGrade.addEventListener("click", async () => {
   if (!currentQuiz) return;
+
+  // 採点
   resultState = {};
   for (const item of currentQuiz.items) {
     resultState[item.id] = gradeItem(item);
   }
   renderResults();
-  renderAnswerPanels();
+
+  // ✅ 採点したら自動で「正解・解説」表示（トグルON＋展開）
+  toggleAnswers.checked = true;
+  applyAnswersVisibility();
+
+  // ✅ ログ保存
+  try {
+    await logAttempt();
+    await refreshHistory();
+  } catch (e) {
+    // ログ保存失敗は学習を止めない（表示だけ）
+    console.warn("logAttempt failed:", e);
+  }
 });
 
 btnReset.addEventListener("click", () => {
   if (!currentQuiz) return;
   resetState();
   initReorderState(currentQuiz);
-  // 再描画（入力欄を空に戻す）
-  renderQuiz(currentQuiz, null);
+  renderQuiz(currentQuiz, currentQuizSourceUrl);
 });
 
 quizSelect.addEventListener("change", async () => {
@@ -557,9 +756,8 @@ quizSelect.addEventListener("change", async () => {
   if (!url) return;
   try {
     await loadQuizFromUrl(url);
-    // URL欄も同期
     quizUrlInput.value = absUrl(url);
-    // URLパラメータも更新（共有しやすい）
+
     const u = new URL(location.href);
     u.searchParams.set("quiz", absUrl(url));
     history.replaceState(null, "", u.toString());
@@ -573,7 +771,7 @@ btnLoadUrl.addEventListener("click", async () => {
   if (!url) return;
   try {
     await loadQuizFromUrl(url);
-    // URLパラメータ更新
+
     const u = new URL(location.href);
     u.searchParams.set("quiz", absUrl(url));
     history.replaceState(null, "", u.toString());
@@ -582,42 +780,47 @@ btnLoadUrl.addEventListener("click", async () => {
   }
 });
 
+btnRefreshHistory?.addEventListener("click", refreshHistory);
+
+btnClearHistory?.addEventListener("click", async () => {
+  const ok = confirm("履歴を全削除します。よろしいですか？");
+  if (!ok) return;
+  try {
+    await clearAttempts();
+    await refreshHistory();
+  } catch (e) {
+    alert("削除に失敗しました: " + e.message);
+  }
+});
+
 /* =========================
  * Boot
  * ========================= */
-function escapeHtml(s) {
-  return (s ?? "").toString()
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
 async function boot() {
   app.innerHTML = `<div class="card">Loading…</div>`;
+  historyList.textContent = "Loading history…";
+
+  // 履歴を先に表示（クイズ読込失敗でも見れる）
+  refreshHistory();
 
   try {
     const list = await loadQuizList();
     renderQuizSelect(list);
 
-    // 直URL（?quiz=）があれば最優先で読み込み
     const { quiz } = getParams();
     if (quiz) {
       quizUrlInput.value = quiz;
       await loadQuizFromUrl(quiz);
-      // select 側も一致するなら合わせる
       const opt = Array.from(quizSelect.options).find(o => absUrl(o.value) === absUrl(quiz));
       if (opt) quizSelect.value = opt.value;
       return;
     }
 
-    // 一覧があって先頭を自動ロードしたい場合はここを変更
-    // if (list[0]?.url) await loadQuizFromUrl(list[0].url);
-
     app.innerHTML = `<div class="card">クイズを選択するか、URLを入力してください。</div>`;
   } catch (e) {
-    app.innerHTML = `<div class="card">起動エラー：${escapeHtml(e.message)}<br><span class="small">index.json のURLやCORS、パスを確認してください。</span></div>`;
+    app.innerHTML =
+      `<div class="card">起動エラー：${escapeHtml(e.message)}<br>` +
+      `<span class="small">index.json のURLやCORS、パスを確認してください。</span></div>`;
     quizSelect.innerHTML = `<option value="">起動エラー</option>`;
   }
 }
