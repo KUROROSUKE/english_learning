@@ -1,9 +1,1 @@
-{
-  "quizzes": [
-    {
-      "id": "hs-entrance-grammar-001",
-      "title": "高校受験 英語 文法ミニテスト",
-      "url": "./quizzes/hs-entrance-grammar-001.json"
-    }
-  ]
-}
+{ "id": "hs-entrance-grammar-001", "title": "...", "url": "./quizzes/hs-entrance-grammar-001.json" }
