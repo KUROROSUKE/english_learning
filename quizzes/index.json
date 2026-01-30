@@ -29,6 +29,20 @@
       "level": "公立 基礎",
       "tags": ["grammar", "basic"],
       "url": "./hs-entrance-grammar-001.json"
+    },
+    {
+      "version": "1.0",
+      "description": "金大附属高校（石川）英語対策：形式準拠・実戦演習クイズ一覧",
+      "quizzes": [
+        {
+          "id": "kindaifuzoku-english-practice-001",
+          "title": "金大附属 英語（形式準拠・実戦演習）",
+          "level": "金大附属：大問構成準拠（誤文訂正＋長文＋英作文）",
+          "tags": ["kindaifuzoku", "english", "entrance-exam", "error-correction", "reading", "writing"],
+          "url": "./kindaifuzoku-english-practice-001.json"
+        }
+      ]
     }
+
   ]
 }
