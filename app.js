@@ -744,19 +744,27 @@ btnReset.addEventListener("click", () => {
 });
 
 quizSelect.addEventListener("change", async () => {
-  const url = quizSelect.value;
-  if (!url) return;
-  try {
-    await loadQuizFromUrl(url);
-    quizUrlInput.value = absUrl(url);
+  const selectedUrl = quizSelect.value;
+  if (!selectedUrl) return;
 
-    const u = new URL(location.href);
-    u.searchParams.set("quiz", absUrl(url));
-    history.replaceState(null, "", u.toString());
+  // ① URL入力欄を更新（相対→絶対にしておくと見やすい）
+  const fullUrl = new URL(selectedUrl, location.href).toString();
+  quizUrlInput.value = fullUrl;
+
+  // ② クイズ読み込み（読み込みは option の value をそのまま使ってOK）
+  try {
+    await loadQuizFromUrl(selectedUrl);
   } catch (e) {
     app.innerHTML = `<div class="card">読み込みエラー：${escapeHtml(e.message)}</div>`;
+    return;
   }
+
+  // ③ ブラウザURL（?quiz=...）も更新
+  const u = new URL(location.href);
+  u.searchParams.set("quiz", fullUrl);
+  history.replaceState(null, "", u.toString());
 });
+
 
 btnLoadUrl.addEventListener("click", async () => {
   const url = quizUrlInput.value.trim();
