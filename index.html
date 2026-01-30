@@ -49,6 +49,27 @@
     </div>
   </section>
 
+  <section class="panel" id="historyPanel">
+  <div class="row">
+    <div class="field grow">
+      <label>履歴</label>
+      <div class="small">採点結果を端末に保存します（IndexedDB）。</div>
+    </div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <button id="btnRefreshHistory">履歴更新</button>
+    </div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <button id="btnClearHistory">履歴を全削除</button>
+    </div>
+  </div>
+
+  <div id="historyList" class="small" style="margin-top:10px;">
+    Loading history…
+  </div>
+</section>
+
   <main id="app" class="app">
     <div class="card">Loading…</div>
   </main>
