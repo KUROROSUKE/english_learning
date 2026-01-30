@@ -7,88 +7,102 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="container-max">
-    
-    <header class="top-bar">
-      <div class="brand">
-        <h1 id="appTitle">Quiz Note</h1>
-        <span class="meta" id="appMeta"></span>
-      </div>
-      <div id="statusBar" class="status-bar" style="display:none;">
-        <span id="progressText">0 / 0</span>
-        <progress id="progressBar" value="0" max="100"></progress>
-      </div>
-    </header>
 
-    <section id="setupPanel" class="panel-clean">
-      <div class="setup-main">
+  <section id="view-home" class="view active">
+    <div class="container-narrow">
+      <header class="home-header">
+        <h1>Quiz Note</h1>
+        <p class="sub">学習ドリルアプリ</p>
+      </header>
+
+      <div class="menu-card">
         <label>ドリルを選択</label>
         <select id="quizSelect" class="big-select">
           <option value="">読み込み中…</option>
         </select>
-      </div>
-      
-      <details class="advanced-settings">
-        <summary>URL指定・その他の設定</summary>
-        <div class="panel-inner">
-          <div class="field">
-            <label>クイズURL直接入力</label>
-            <div style="display:flex; gap:8px;">
-              <input id="quizUrlInput" type="url" placeholder="https://..." style="flex:1;" />
-              <button id="btnLoadUrl">読込</button>
-            </div>
-          </div>
-          <div class="field">
-             <label class="toggle">
-              <input type="checkbox" id="toggleAnswers" />
-              常に正解を表示（デバッグ用）
-            </label>
-          </div>
-          <div class="field" style="margin-top:10px;">
-             <button id="btnClearHistory" class="btn-danger">履歴を全削除</button>
-          </div>
+        
+        <div class="or-text">- OR -</div>
+
+        <div class="url-input-group">
+          <input id="quizUrlInput" type="url" placeholder="https://.../quiz.json" />
+          <button id="btnLoadUrl">URL読込</button>
         </div>
-      </details>
-    </section>
-
-    <section id="resultPanel" class="result-panel" style="display:none;">
-      <div class="score-box">
-        <span class="score-label">正答率</span>
-        <span id="scoreValue" class="score-value">--%</span>
       </div>
-      <div class="result-actions">
-        <p id="resultMessage">おつかれさまでした！</p>
-        <button id="btnRetryMissed" style="display:none;">間違えた問題だけ解く</button>
-      </div>
-    </section>
 
-    <div id="app">
-      <div class="placeholder-text">上のリストからドリルを選んでください。</div>
+      <div class="menu-actions">
+        <button id="btnToAnalysis" class="btn-outline">📊 学習データの分析・履歴を見る</button>
+      </div>
     </div>
+  </section>
 
-    <div class="action-area">
-      <button id="btnGrade" class="btn-primary" disabled>採点する</button>
-      <button id="btnReset" class="btn-secondary">リセット</button>
+  <section id="view-quiz" class="view">
+    <header class="sticky-header">
+      <button id="btnQuitQuiz" class="btn-text">← 中断して戻る</button>
+      <span id="quizTitleDisplay" class="header-title">Quiz Title</span>
+    </header>
+
+    <div class="container-max">
+      <div id="quizAppBody">
+        </div>
+
+      <div class="action-area">
+        <button id="btnGrade" class="btn-primary-large">採点する</button>
+      </div>
     </div>
+  </section>
 
-    <section class="panel-clean" style="margin-top: 40px; border-top: 2px dashed #eee; padding-top:20px;">
-      <h3>学習データ</h3>
-      <div class="row">
-        <div class="field grow">
-          <label>弱点分析・おすすめ</label>
-          <div id="insights" class="small">Loading...</div>
-          <div id="recommendations" class="small" style="margin-top:8px;"></div>
+  <section id="view-result" class="view">
+    <div class="container-max">
+      <div class="result-summary">
+        <h2>採点結果</h2>
+        <div class="score-display">
+          <span id="scoreText">--%</span>
         </div>
-        <div class="field" style="min-width: 200px;">
-          <label>最近の履歴</label>
-          <div id="historyList" class="small">Loading...</div>
+        <div id="resultMessage" class="result-msg"></div>
+        
+        <div class="result-buttons">
+          <button id="btnRetryMissed" class="btn-accent" style="display:none;">間違えた問題だけ解き直す</button>
+          <button id="btnBackToHomeFromResult" class="btn-secondary">メニューに戻る</button>
         </div>
       </div>
-      <div style="text-align:right; margin-top:8px;">
-        <button id="btnRefreshInsights" class="btn-small">データを更新</button>
-      </div>
-    </section>
 
+      <div id="resultDetails" class="result-details">
+        </div>
+    </div>
+  </section>
+
+  <section id="view-analysis" class="view">
+    <header class="sticky-header">
+      <button id="btnBackToHomeFromAnalysis" class="btn-text">← メニューに戻る</button>
+      <span class="header-title">学習データ</span>
+    </header>
+
+    <div class="container-narrow">
+      <div class="panel">
+        <h3>弱点・傾向</h3>
+        <div id="insightsContent" class="small">データ集計中...</div>
+        <div style="text-align:right; margin-top:8px;">
+          <button id="btnRefreshInsights" class="btn-small">更新</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>復習おすすめ (Due)</h3>
+        <div id="recommendationsContent" class="small"></div>
+      </div>
+
+      <div class="panel">
+        <div style="display:flex; justify-content:space-between;">
+          <h3>最近の履歴</h3>
+          <button id="btnClearHistory" class="btn-danger-text">履歴消去</button>
+        </div>
+        <div id="historyListContent" class="history-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <div style="display:none;">
+    <input type="checkbox" id="toggleAnswers" />
   </div>
 
   <script src="./study_engine.js"></script>
