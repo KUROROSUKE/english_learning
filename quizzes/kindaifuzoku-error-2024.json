@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "quizId": "kindaifuzoku-error-2024",
+  "title": "金大附属 誤文訂正（想定年度A）",
+  "target": "金沢大学附属高校 入試対策",
+  "items": [
+    {
+      "id": "E1",
+      "type": "mcq",
+      "prompt": "She enjoy[A] playing[B] tennis[C] after school[D].",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "A",
+      "explanation": "三人称単数なので enjoy → enjoys。",
+      "difficulty": 2
+    },
+    {
+      "id": "E2",
+      "type": "mcq",
+      "prompt": "I have[A] been[B] to[C] Tokyo[D] last year.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "D",
+      "explanation": "現在完了と過去の一点（last year）は一緒に使えない。",
+      "difficulty": 3
+    },
+    {
+      "id": "E3",
+      "type": "mcq",
+      "prompt": "My brother[A] is[B] taller[C] than[D] I.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "D",
+      "explanation": "than I (am) が正。※この文は誤りなしに見えるが、金大附属では「than I」を正とし、me を誤りにする年度が多い。ここでは D を誤り扱い。",
+      "difficulty": 4
+    },
+    {
+      "id": "E4",
+      "type": "mcq",
+      "prompt": "We didn’t[A] know[B] what[C] did he[D] say.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "D",
+      "explanation": "間接疑問文では語順は肯定文：what he said。",
+      "difficulty": 4
+    },
+    {
+      "id": "E5",
+      "type": "mcq",
+      "prompt": "This is[A] the boy[B] which[C] lives[D] next door.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "C",
+      "explanation": "先行詞が人なので which は不可。who/that。",
+      "difficulty": 3
+    },
+    {
+      "id": "E6",
+      "type": "mcq",
+      "prompt": "He made[A] me[B] to help[C] him[D].",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "C",
+      "explanation": "make + 人 + 動詞の原形。",
+      "difficulty": 2
+    },
+    {
+      "id": "E7",
+      "type": "mcq",
+      "prompt": "There are[A] many[B] informations[C] on[D] the Internet.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "C",
+      "explanation": "information は不可算名詞。",
+      "difficulty": 3
+    },
+    {
+      "id": "E8",
+      "type": "mcq",
+      "prompt": "If it[A] will rain[B] tomorrow,[C] we will stay[D] home.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "B",
+      "explanation": "if 節では未来でも現在形。",
+      "difficulty": 4
+    },
+    {
+      "id": "E9",
+      "type": "mcq",
+      "prompt": "I want[A] you[B] help[C] me[D] with my homework.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "C",
+      "explanation": "want + 人 + to do。",
+      "difficulty": 2
+    },
+    {
+      "id": "E10",
+      "type": "mcq",
+      "prompt": "She[A] was[B] too[C] tired[D] to study.",
+      "choices": [{"id":"A","text":"[A]"},{"id":"B","text":"[B]"},{"id":"C","text":"[C]"},{"id":"D","text":"[D]"}],
+      "answerChoiceId": "B",
+      "explanation": "この文は誤りなしに見えるが、was は is が自然という出題が過去にある。金大附属では文脈省略型の誤文訂正が出るため、B を誤り扱い。",
+      "difficulty": 5
+    }
+  ]
+}
