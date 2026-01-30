@@ -16,7 +16,7 @@
         "if 節",
         "不定詞・動名詞"
       ],
-      "url": "./kindaifuzoku-error-2024.json"
+      "url": "./quizzes/kindaifuzoku-error-2024.json"
     },
     {
       "id": "kindaifuzoku-error-2025",
@@ -29,14 +29,14 @@
         "間接疑問文",
         "前置詞＋動名詞"
       ],
-      "url": "./kindaifuzoku-error-2025.json"
+      "url": "./quizzes/kindaifuzoku-error-2025.json"
     },
     {
       "id": "kindaifuzoku-english-practice-001",
       "title": "金大附属 英語（形式準拠・実戦演習）",
       "level": "金大附属：大問構成準拠（誤文訂正＋長文＋英作文）",
       "tags": ["kindaifuzoku", "english", "entrance-exam", "error-correction", "reading", "writing"],
-      "url": "./kindaifuzoku-english-practice-001.json"
+      "url": "./quizzes/kindaifuzoku-english-practice-001.json"
     }
   ]
 }
