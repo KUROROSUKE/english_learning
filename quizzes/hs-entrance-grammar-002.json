@@ -1,65 +1,40 @@
 {
-  "version": "1.0",
-  "quizId": "hs-entrance-grammar-002",
-  "title": "高校受験 英語 文法ミニテスト（難しめ）",
+  "version": "1.1",
+  "quizId": "hs-entrance-grammar-003",
+  "title": "高校受験 英語 文法テスト（入試準拠・改訂）",
   "lang": "ja",
   "target": "高校受験",
   "timeLimitSec": 1200,
   "items": [
     {
       "id": "q1",
-      "type": "mcq",
-      "prompt": "次の空所に入る最も適切なものを選びなさい：I have (　) to finish my homework before dinner.",
-      "choices": [
-        { "id": "A", "text": "must" },
-        { "id": "B", "text": "to" },
-        { "id": "C", "text": "can" },
-        { "id": "D", "text": "am" }
-      ],
-      "answerChoiceId": "A",
-      "explanation": "have to ～（～しなければならない）とほぼ同じ意味の must が入る。",
-      "tags": ["modals", "must-have-to"],
-      "difficulty": 2
+      "type": "fill",
+      "prompt": "（　）に適切な形を入れなさい：I ( see ) this movie three times.",
+      "blank": "_____",
+      "answer": "have seen",
+      "explanation": "回数（three times）があるので現在完了。動詞 see の適切な形は have seen。",
+      "tags": ["present-perfect", "irregular-verbs"],
+      "difficulty": 3
     },
     {
       "id": "q2",
-      "type": "fill",
-      "prompt": "（　）に適切な形を入れなさい：This is the best movie I ( see ) this year.",
-      "blank": "_____",
-      "answer": "have seen",
-      "explanation": "this year（今年）＝現在完了が自然。I have seen の形。",
-      "tags": ["present-perfect", "tense"],
+      "type": "mcq",
+      "prompt": "次の文とほぼ同じ意味になるものを選びなさい。\nTom is very tired, so he can't play soccer.",
+      "choices": [
+        { "id": "A", "text": "Tom is too tired to play soccer." },
+        { "id": "B", "text": "Tom is very tired to play soccer." },
+        { "id": "C", "text": "Tom is tired enough play soccer." },
+        { "id": "D", "text": "Tom is tired so play soccer." }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "too + 形容詞 + to ～（～すぎて…できない）。",
+      "tags": ["too-to", "paraphrase"],
       "difficulty": 3
     },
     {
       "id": "q3",
       "type": "mcq",
-      "prompt": "次の2文がほぼ同じ意味になるように、空所に入る語を選びなさい：\nTom is very kind. He always helps me.\nTom is (　 ) kind (　 ) he always helps me.",
-      "choices": [
-        { "id": "A", "text": "too / to" },
-        { "id": "B", "text": "so / that" },
-        { "id": "C", "text": "as / as" },
-        { "id": "D", "text": "such / as" }
-      ],
-      "answerChoiceId": "B",
-      "explanation": "so + 形容詞 + that ...（とても～なので…）",
-      "tags": ["so-that", "adjective-clause"],
-      "difficulty": 3
-    },
-    {
-      "id": "q4",
-      "type": "reorder",
-      "prompt": "次の語を正しい英文になるように並べかえなさい（※文頭の語も含む）。",
-      "tokens": ["If", "it", "rains", "tomorrow", "we", "will", "stay", "at", "home"],
-      "answer": ["If", "it", "rains", "tomorrow", "we", "will", "stay", "at", "home"],
-      "hint": "条件節（If～）の後に主節（we will～）。",
-      "tags": ["if", "future", "word-order"],
-      "difficulty": 2
-    },
-    {
-      "id": "q5",
-      "type": "mcq",
-      "prompt": "次のうち正しい英文を選びなさい。",
+      "prompt": "次のうち、文法的に正しい英文を1つ選びなさい。",
       "choices": [
         { "id": "A", "text": "I enjoyed to play soccer yesterday." },
         { "id": "B", "text": "I enjoyed playing soccer yesterday." },
@@ -67,76 +42,55 @@
         { "id": "D", "text": "I enjoyed played soccer yesterday." }
       ],
       "answerChoiceId": "B",
-      "explanation": "enjoy の後は動名詞（-ing）。",
+      "explanation": "enjoy の後には動名詞（-ing）が来る。",
       "tags": ["gerund", "verb-patterns"],
-      "difficulty": 3
-    },
-    {
-      "id": "q6",
-      "type": "fill",
-      "prompt": "（　）に適切な語を入れなさい：The book (　) I bought yesterday was interesting.",
-      "blank": "_____",
-      "answer": "that",
-      "explanation": "目的格の関係代名詞は that / which が使える。入試では that がよく出る。",
-      "tags": ["relative-pronoun", "that"],
-      "difficulty": 3
-    },
-    {
-      "id": "q7",
-      "type": "mcq",
-      "prompt": "次の会話が自然になるように、空所に入るものを選びなさい：\nA: Shall we play soccer after school?\nB: Sorry, I (　 ) go home early today.",
-      "choices": [
-        { "id": "A", "text": "must" },
-        { "id": "B", "text": "must to" },
-        { "id": "C", "text": "am must" },
-        { "id": "D", "text": "to must" }
-      ],
-      "answerChoiceId": "A",
-      "explanation": "助動詞 must の後は動詞の原形。must go。",
-      "tags": ["modals", "must"],
       "difficulty": 2
     },
     {
-      "id": "q8",
+      "id": "q4",
+      "type": "reorder",
+      "prompt": "次の語を正しい英文になるように並べかえなさい。",
+      "tokens": ["Because", "he", "didn't", "come", ",", "we", "couldn't", "start", "the", "game"],
+      "answer": ["Because", "he", "didn't", "come", ",", "we", "couldn't", "start", "the", "game"],
+      "hint": "理由を表す because 節＋主節。",
+      "tags": ["because", "word-order", "past"],
+      "difficulty": 3
+    },
+    {
+      "id": "q5",
       "type": "translation",
       "prompt": "次の日本語を英語にしなさい：「彼が来なかったので、私たちは試合を始めることができなかった。」",
       "accept": [
         "Because he didn't come, we couldn't start the game.",
         "We couldn't start the game because he didn't come.",
-        "We couldn't start the match because he didn't come.",
-        "Because he didn't come, we couldn't start the match."
+        "We couldn't start the match because he didn't come."
       ],
       "rubric": {
         "points": 6,
         "criteria": [
-          { "name": "否定過去（来なかった）", "points": 2, "checks": ["didn't come"] },
-          { "name": "できなかった", "points": 2, "checks": ["couldn't"] },
-          { "name": "理由（because）", "points": 1, "checks": ["because"] },
+          { "name": "過去否定", "points": 2, "checks": ["didn't come"] },
+          { "name": "couldn't", "points": 2, "checks": ["couldn't"] },
+          { "name": "because", "points": 1, "checks": ["because"] },
           { "name": "start the game/match", "points": 1, "checks": ["start the game", "start the match"] }
         ],
         "commonMistakes": [
-          { "pattern": "Because he doesn't come", "feedback": "過去の話なので doesn't ではなく didn't。" },
-          { "pattern": "we can't started", "feedback": "can't/couldn't の後は動詞の原形：start。" },
-          { "pattern": "we couldn't to start", "feedback": "couldn't の後に to は不要。" }
+          {
+            "pattern": "He doesn't come",
+            "feedback": "過去の出来事なので doesn't ではなく didn't を使います。"
+          },
+          {
+            "pattern": "We couldn't start game",
+            "feedback": "game は数えられる名詞なので the game にします。"
+          }
         ]
       },
-      "tags": ["translation", "because", "past", "modal-could"],
+      "tags": ["translation", "because", "past"],
       "difficulty": 4
     },
     {
-      "id": "q9",
-      "type": "reorder",
-      "prompt": "次の語を正しい英文になるように並べかえなさい。",
-      "tokens": ["She", "was", "happy", "because", "she", "had", "won", "the", "game"],
-      "answer": ["She", "was", "happy", "because", "she", "had", "won", "the", "game"],
-      "hint": "過去完了 had won（～していた）。",
-      "tags": ["past-perfect", "because", "word-order"],
-      "difficulty": 3
-    },
-    {
-      "id": "q10",
+      "id": "q6",
       "type": "mcq",
-      "prompt": "次の文の空所に入る最も適切なものを選びなさい：\nThis is the boy (　 ) father is a doctor.",
+      "prompt": "次の文の空所に入る最も適切な語を選びなさい：\nThis is the boy (　 ) father is a doctor.",
       "choices": [
         { "id": "A", "text": "who" },
         { "id": "B", "text": "whose" },
@@ -144,44 +98,19 @@
         { "id": "D", "text": "which" }
       ],
       "answerChoiceId": "B",
-      "explanation": "所有を表す関係代名詞：whose + 名詞。",
+      "explanation": "所有を表す関係代名詞は whose。",
       "tags": ["relative-pronoun", "whose"],
       "difficulty": 4
     },
     {
-      "id": "q11",
+      "id": "q7",
       "type": "fill",
-      "prompt": "（　）に適切な形を入れなさい：I want you ( help ) me with my homework.",
+      "prompt": "（　）に適切な語を入れなさい：I want you ( help ) me with my homework.",
       "blank": "_____",
       "answer": "to help",
-      "explanation": "want + 人 + to do（人に～してほしい）。",
+      "explanation": "want + 人 + to + 動詞の原形。",
       "tags": ["to-infinitive", "want"],
       "difficulty": 3
-    },
-    {
-      "id": "q12",
-      "type": "translation",
-      "prompt": "次の日本語を英語にしなさい：「その箱は重すぎて、彼は持てなかった。」",
-      "accept": [
-        "The box was too heavy for him to carry.",
-        "The box was too heavy for him to lift.",
-        "It was too heavy for him to carry the box."
-      ],
-      "rubric": {
-        "points": 6,
-        "criteria": [
-          { "name": "too ... to 構文", "points": 3, "checks": ["too heavy to"] },
-          { "name": "for him", "points": 1, "checks": ["for him"] },
-          { "name": "過去（was）", "points": 1, "checks": ["was"] },
-          { "name": "carry/lift", "points": 1, "checks": ["carry", "lift"] }
-        ],
-        "commonMistakes": [
-          { "pattern": "too heavy to carried", "feedback": "to の後は動詞の原形：carry。" },
-          { "pattern": "The box is too heavy", "feedback": "過去の話なら is ではなく was。" }
-        ]
-      },
-      "tags": ["translation", "too-to", "past"],
-      "difficulty": 4
     }
   ]
 }
