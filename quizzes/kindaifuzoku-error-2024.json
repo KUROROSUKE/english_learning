@@ -85,7 +85,7 @@
     {
       "id": "E4",
       "type": "mcq",
-      "prompt": "We A[didn’t] B[know] C[what] did D[he] say.",
+      "prompt": "We A[didn’t] B[know] C[what] D[did] he say.",
       "choices": [
         {
           "id": "A",
