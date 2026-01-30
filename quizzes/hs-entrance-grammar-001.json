@@ -1,11 +1,1 @@
-{
-  "title": "高校受験 英語 文法ミニテスト",
-  "items": [
-    {
-      "id": "q1",
-      "type": "fill",
-      "prompt": "I ( play ) tennis yesterday.",
-      "answer": "played"
-    }
-  ]
-}
+{ "quizId": "hs-entrance-grammar-001", "title": "...", "items": [...] }
