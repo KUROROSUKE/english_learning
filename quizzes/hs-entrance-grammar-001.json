@@ -1,1 +1,117 @@
-{ "quizId": "hs-entrance-grammar-001", "title": "...", "items": [...] }
+{
+  "version": "1.0",
+  "quizId": "hs-entrance-grammar-001",
+  "title": "高校受験 英語 文法ミニテスト",
+  "lang": "ja",
+  "target": "高校受験",
+  "timeLimitSec": 900,
+  "items": [
+    {
+      "id": "q1",
+      "type": "reorder",
+      "prompt": "次の語を正しい英文になるように並べかえなさい。",
+      "tokens": ["plays", "after", "he", "school", "soccer"],
+      "answer": ["he", "plays", "soccer", "after", "school"],
+      "hint": "基本は S + V。after school は1まとまり。",
+      "tags": ["word-order", "sv", "time-phrase"],
+      "difficulty": 1
+    },
+    {
+      "id": "q2",
+      "type": "reorder",
+      "prompt": "次の語を正しい英文になるように並べかえなさい。",
+      "tokens": ["is", "the", "my", "in", "bag", "desk"],
+      "answer": ["my", "bag", "is", "in", "the", "desk"],
+      "note": "※文法（語順）練習用の例です。意味としては不自然になりやすいので、入試では文脈で判断してください。",
+      "tags": ["word-order", "be-verb", "preposition"],
+      "difficulty": 2
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "prompt": "（　）に正しい形を入れなさい：I ( play ) tennis yesterday.",
+      "blank": "_____",
+      "answer": "played",
+      "explanation": "yesterday があるので過去形。play → played。",
+      "tags": ["tense", "past"],
+      "difficulty": 1
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "prompt": "（　）に正しい形を入れなさい：She ( like ) music very much.",
+      "blank": "_____",
+      "answer": "likes",
+      "explanation": "主語が三人称単数（She）なので一般動詞に -s が付く。",
+      "tags": ["subject-verb-agreement", "present"],
+      "difficulty": 1
+    },
+    {
+      "id": "q5",
+      "type": "article",
+      "prompt": "（　）に a / the / 何も入れない のどれかを入れなさい：I have (　) dog.",
+      "choices": [
+        { "id": "a", "text": "a" },
+        { "id": "the", "text": "the" },
+        { "id": "none", "text": "（何も入れない）" }
+      ],
+      "answerChoiceId": "a",
+      "explanation": "初めて出る単数名詞なので a dog。",
+      "tags": ["articles", "countable-nouns"],
+      "difficulty": 2
+    },
+    {
+      "id": "q6",
+      "type": "article",
+      "prompt": "（　）に a / the / 何も入れない のどれかを入れなさい：(　) dogs are very cute.",
+      "choices": [
+        { "id": "a", "text": "a" },
+        { "id": "the", "text": "the" },
+        { "id": "none", "text": "（何も入れない）" }
+      ],
+      "answerChoiceId": "none",
+      "explanation": "複数形で一般論（犬はかわいい）→ 冠詞なしが基本。",
+      "tags": ["articles", "plural", "general-statements"],
+      "difficulty": 2
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "prompt": "意味が正しい英文を1つ選びなさい。",
+      "choices": [
+        { "id": "A", "text": "This picture gives me happy." },
+        { "id": "B", "text": "This picture makes me happy." }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "make + 人 + 形容詞（happy）の形が正しい。",
+      "tags": ["make-causative", "adjective"],
+      "difficulty": 1
+    },
+    {
+      "id": "q8",
+      "type": "translation",
+      "prompt": "次の日本語を英語にしなさい：「私は昨日、その試合に勝ってうれしかった。」",
+      "accept": [
+        "I was happy because I won the game yesterday.",
+        "I was happy because I won the match yesterday.",
+        "I was happy to win the game yesterday.",
+        "I was happy when I won the game yesterday."
+      ],
+      "rubric": {
+        "points": 5,
+        "criteria": [
+          { "name": "時制", "points": 2, "checks": ["yesterday", "won/was"] },
+          { "name": "勝つ表現", "points": 2, "checks": ["won the game/match"] },
+          { "name": "うれしい表現", "points": 1, "checks": ["was happy/happy to"] }
+        ],
+        "commonMistakes": [
+          { "pattern": "I am happy yesterday", "feedback": "yesterday があるので過去（was happy）にしよう。" },
+          { "pattern": "I won the game and happy", "feedback": "and の後に動詞が必要。I was happy... の形に。" },
+          { "pattern": "This makes me happy yesterday", "feedback": "主語がズレているので『私は』を主語に戻そう。" }
+        ]
+      },
+      "tags": ["translation", "tense", "because/when", "emotion"],
+      "difficulty": 3
+    }
+  ]
+}
