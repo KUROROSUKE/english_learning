@@ -1,13 +1,35 @@
 {
   "version": "1.0",
-  "description": "金大附属高校（石川）英語対策：形式準拠・実戦演習クイズ一覧",
+  "description": "金沢大学附属高校 英語・誤文訂正（大問2）対策 年度別演習",
+  "school": "金沢大学附属高校",
+  "section": "誤文訂正（大問2）",
   "quizzes": [
     {
-      "id": "kindaifuzoku-english-practice-001",
-      "title": "金大附属 英語（形式準拠・実戦演習）",
-      "level": "金大附属：大問構成準拠（誤文訂正＋長文＋英作文）",
-      "tags": ["kindaifuzoku", "english", "entrance-exam", "error-correction", "reading", "writing"],
-      "url": "./kindaifuzoku-english-practice-001.json"
+      "id": "kindaifuzoku-error-2024",
+      "title": "金大附属 誤文訂正（想定年度A）",
+      "level": "標準〜やや難",
+      "focus": [
+        "三単現",
+        "現在完了",
+        "間接疑問文",
+        "関係代名詞",
+        "if 節",
+        "不定詞・動名詞"
+      ],
+      "url": "./kindaifuzoku-error-2024.json"
+    },
+    {
+      "id": "kindaifuzoku-error-2025",
+      "title": "金大附属 誤文訂正（想定年度B）",
+      "level": "標準〜やや難",
+      "focus": [
+        "動名詞",
+        "for / since",
+        "関係代名詞（目的格）",
+        "間接疑問文",
+        "前置詞＋動名詞"
+      ],
+      "url": "./kindaifuzoku-error-2025.json"
     }
   ]
 }
