@@ -93,6 +93,47 @@
         "語法"
       ],
       "url": "./quizzes/safe-error-04.json"
+    },
+    {
+      "id": "kindaifuzoku-english-vocab-100-part1",
+      "title": "金大附属 英語（語彙：意味・可算/不可算）100問 Part1（V1–V50）",
+      "level": "標準〜やや難",
+      "focus": [
+        "可算・不可算",
+        "many / much",
+        "few / little",
+        "数え方（piece / pair など）",
+        "語彙（基本動詞・名詞）"
+      ],
+      "tags": [
+        "kindaifuzoku",
+        "english",
+        "entrance-exam",
+        "vocabulary",
+        "countable-uncountable",
+        "meaning"
+      ],
+      "url": "./quizzes/kindaifuzoku-english-vocab-100-part1.json"
+    },
+    {
+      "id": "kindaifuzoku-english-vocab-100-part2",
+      "title": "金大附属 英語（語彙：意味・可算/不可算）100問 Part2（V51–V100）",
+      "level": "標準〜やや難",
+      "focus": [
+        "語彙（類義語・使い分け）",
+        "動詞の意味",
+        "不可算名詞",
+        "数え方（piece など）"
+      ],
+      "tags": [
+        "kindaifuzoku",
+        "english",
+        "entrance-exam",
+        "vocabulary",
+        "countable-uncountable",
+        "meaning"
+      ],
+      "url": "./quizzes/kindaifuzoku-english-vocab-100-part2.json"
     }
   ]
 }
