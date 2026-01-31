@@ -1,0 +1,760 @@
+{
+  "version": "2.1",
+  "quizId": "kindaifuzoku-english-vocab-100-part2",
+  "title": "金大附属 英語（語彙：意味・可算/不可算）100問 Part2",
+  "lang": "ja",
+  "target": "金沢大学附属高校 入試対策",
+  "timeLimitSec": 2700,
+  "items": [
+    {
+      "id": "V51",
+      "type": "mcq",
+      "prompt": "【意味】「提案する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "suggest" },
+        { "id": "B", "text": "support" },
+        { "id": "C", "text": "supply" },
+        { "id": "D", "text": "suppose" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "suggest = 提案する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V52",
+      "type": "mcq",
+      "prompt": "【意味】「同意する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "agree" },
+        { "id": "B", "text": "argue" },
+        { "id": "C", "text": "allow" },
+        { "id": "D", "text": "avoid" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "agree = 同意する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V53",
+      "type": "mcq",
+      "prompt": "【意味】「反対する／同意しない」という意味に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "disagree" },
+        { "id": "B", "text": "discuss" },
+        { "id": "C", "text": "discover" },
+        { "id": "D", "text": "disappear" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "disagree = 同意しない。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V54",
+      "type": "mcq",
+      "prompt": "【意味】「許可する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "allow" },
+        { "id": "B", "text": "follow" },
+        { "id": "C", "text": "borrow" },
+        { "id": "D", "text": "belong" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "allow = 許可する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V55",
+      "type": "mcq",
+      "prompt": "【意味】「避ける」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "avoid" },
+        { "id": "B", "text": "advise" },
+        { "id": "C", "text": "arrive" },
+        { "id": "D", "text": "appear" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "avoid = 避ける。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V56",
+      "type": "mcq",
+      "prompt": "【意味】「〜に到着する」という意味で、前置詞なしで目的語を取れるのはどれか。",
+      "choices": [
+        { "id": "A", "text": "arrive" },
+        { "id": "B", "text": "reach" },
+        { "id": "C", "text": "appear" },
+        { "id": "D", "text": "attend" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "reach + 目的語（reach the station）。arrive は arrive at/in。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V57",
+      "type": "mcq",
+      "prompt": "【意味】「出席する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "attend" },
+        { "id": "B", "text": "attack" },
+        { "id": "C", "text": "attach" },
+        { "id": "D", "text": "attract" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "attend = 出席する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V58",
+      "type": "mcq",
+      "prompt": "【意味】「増やす（他動詞）」に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "increase" },
+        { "id": "B", "text": "include" },
+        { "id": "C", "text": "introduce" },
+        { "id": "D", "text": "inform" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "increase は「増える／増やす」両方で使える。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V59",
+      "type": "mcq",
+      "prompt": "【意味】「参加する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "join" },
+        { "id": "B", "text": "judge" },
+        { "id": "C", "text": "joke" },
+        { "id": "D", "text": "jump" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "join = 参加する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V60",
+      "type": "mcq",
+      "prompt": "【意味】「紹介する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "introduce" },
+        { "id": "B", "text": "increase" },
+        { "id": "C", "text": "improve" },
+        { "id": "D", "text": "invent" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "introduce = 紹介する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V61",
+      "type": "mcq",
+      "prompt": "【意味】「改良する／改善する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "improve" },
+        { "id": "B", "text": "include" },
+        { "id": "C", "text": "increase" },
+        { "id": "D", "text": "invite" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "improve = 改善する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V62",
+      "type": "mcq",
+      "prompt": "【意味】「含む」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "include" },
+        { "id": "B", "text": "increase" },
+        { "id": "C", "text": "invent" },
+        { "id": "D", "text": "influence" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "include = 含む。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V63",
+      "type": "mcq",
+      "prompt": "【意味】「影響を与える」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "influence" },
+        { "id": "B", "text": "inform" },
+        { "id": "C", "text": "invite" },
+        { "id": "D", "text": "intend" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "influence = 影響を与える。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V64",
+      "type": "mcq",
+      "prompt": "【意味】「知らせる」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "inform" },
+        { "id": "B", "text": "impress" },
+        { "id": "C", "text": "improve" },
+        { "id": "D", "text": "imagine" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "inform = 知らせる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V65",
+      "type": "mcq",
+      "prompt": "【意味】「意図する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "intend" },
+        { "id": "B", "text": "intend to" },
+        { "id": "C", "text": "invent" },
+        { "id": "D", "text": "invite" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "intend = 意図する（目的語や to 不定詞を取る）。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V66",
+      "type": "mcq",
+      "prompt": "【意味】次の（　）に入る最も適切な語はどれか。\nI (   ) to study abroad in the future.",
+      "choices": [
+        { "id": "A", "text": "intend" },
+        { "id": "B", "text": "invent" },
+        { "id": "C", "text": "inform" },
+        { "id": "D", "text": "include" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "intend to do = 〜するつもりだ。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V67",
+      "type": "mcq",
+      "prompt": "【意味】「修理する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "repair" },
+        { "id": "B", "text": "repeat" },
+        { "id": "C", "text": "reply" },
+        { "id": "D", "text": "replace" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "repair = 修理する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V68",
+      "type": "mcq",
+      "prompt": "【意味】「取り替える」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "replace" },
+        { "id": "B", "text": "repeat" },
+        { "id": "C", "text": "reply" },
+        { "id": "D", "text": "report" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "replace = 取り替える。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V69",
+      "type": "mcq",
+      "prompt": "【意味】「繰り返す」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "repeat" },
+        { "id": "B", "text": "repair" },
+        { "id": "C", "text": "reply" },
+        { "id": "D", "text": "reduce" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "repeat = 繰り返す。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V70",
+      "type": "mcq",
+      "prompt": "【意味】「答える」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "reply" },
+        { "id": "B", "text": "repeat" },
+        { "id": "C", "text": "repair" },
+        { "id": "D", "text": "replace" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "reply = 返事をする／答える。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V71",
+      "type": "mcq",
+      "prompt": "【意味】「消える／姿を消す」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "disappear" },
+        { "id": "B", "text": "discover" },
+        { "id": "C", "text": "discuss" },
+        { "id": "D", "text": "disagree" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "disappear = 消える。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V72",
+      "type": "mcq",
+      "prompt": "【意味】「現れる」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "appear" },
+        { "id": "B", "text": "apply" },
+        { "id": "C", "text": "approve" },
+        { "id": "D", "text": "appoint" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "appear = 現れる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V73",
+      "type": "mcq",
+      "prompt": "【意味】「申し込む（申請する）」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "apply" },
+        { "id": "B", "text": "appear" },
+        { "id": "C", "text": "approve" },
+        { "id": "D", "text": "appoint" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "apply = 申し込む／申請する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V74",
+      "type": "mcq",
+      "prompt": "【意味】「賛成する／承認する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "approve" },
+        { "id": "B", "text": "improve" },
+        { "id": "C", "text": "prove" },
+        { "id": "D", "text": "remove" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "approve = 承認する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V75",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "homework" },
+        { "id": "B", "text": "assignment" },
+        { "id": "C", "text": "task" },
+        { "id": "D", "text": "question" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "homework は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 2
+    },
+    {
+      "id": "V76",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "advice" },
+        { "id": "B", "text": "suggestion" },
+        { "id": "C", "text": "idea" },
+        { "id": "D", "text": "plan" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "advice は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V77",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "furniture" },
+        { "id": "B", "text": "table" },
+        { "id": "C", "text": "chair" },
+        { "id": "D", "text": "sofa" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "furniture は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V78",
+      "type": "mcq",
+      "prompt": "【数え方】次の文が自然になるように（　）に入る最も適切な語句はどれか。\nThere are three (   ) of furniture in this room.",
+      "choices": [
+        { "id": "A", "text": "furnitures" },
+        { "id": "B", "text": "pieces" },
+        { "id": "C", "text": "pairs" },
+        { "id": "D", "text": "slices" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "furniture は不可算名詞。three pieces of furniture。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V79",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "work" },
+        { "id": "B", "text": "job" },
+        { "id": "C", "text": "task" },
+        { "id": "D", "text": "plan" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "work は不可算名詞として扱うのが基本。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V80",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "weather" },
+        { "id": "B", "text": "cloud" },
+        { "id": "C", "text": "storm" },
+        { "id": "D", "text": "wind" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "weather は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V81",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "money" },
+        { "id": "B", "text": "coin" },
+        { "id": "C", "text": "bill" },
+        { "id": "D", "text": "ticket" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "money は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 2
+    },
+    {
+      "id": "V82",
+      "type": "mcq",
+      "prompt": "【意味】「〜を受け取る」という意味に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "receive" },
+        { "id": "B", "text": "refuse" },
+        { "id": "C", "text": "return" },
+        { "id": "D", "text": "remain" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "receive = 受け取る。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V83",
+      "type": "mcq",
+      "prompt": "【意味】「断る」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "refuse" },
+        { "id": "B", "text": "receive" },
+        { "id": "C", "text": "reduce" },
+        { "id": "D", "text": "repair" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "refuse = 断る。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V84",
+      "type": "mcq",
+      "prompt": "【意味】「返す」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "return" },
+        { "id": "B", "text": "remain" },
+        { "id": "C", "text": "remove" },
+        { "id": "D", "text": "replace" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "return = 返す／戻る。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V85",
+      "type": "mcq",
+      "prompt": "【意味】「残る」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "remain" },
+        { "id": "B", "text": "return" },
+        { "id": "C", "text": "remove" },
+        { "id": "D", "text": "replace" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "remain = 残る。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V86",
+      "type": "mcq",
+      "prompt": "【意味】「取り除く」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "remove" },
+        { "id": "B", "text": "reduce" },
+        { "id": "C", "text": "receive" },
+        { "id": "D", "text": "remain" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "remove = 取り除く。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V87",
+      "type": "mcq",
+      "prompt": "【意味】「期待する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "expect" },
+        { "id": "B", "text": "explain" },
+        { "id": "C", "text": "export" },
+        { "id": "D", "text": "escape" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "expect = 期待する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V88",
+      "type": "mcq",
+      "prompt": "【意味】「逃げる」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "escape" },
+        { "id": "B", "text": "expect" },
+        { "id": "C", "text": "except" },
+        { "id": "D", "text": "exchange" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "escape = 逃げる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V89",
+      "type": "mcq",
+      "prompt": "【意味】「除いて」という意味の前置詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "except" },
+        { "id": "B", "text": "escape" },
+        { "id": "C", "text": "expect" },
+        { "id": "D", "text": "explain" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "except = 〜を除いて。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V90",
+      "type": "mcq",
+      "prompt": "【意味】「交換する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "exchange" },
+        { "id": "B", "text": "excuse" },
+        { "id": "C", "text": "expand" },
+        { "id": "D", "text": "examine" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "exchange = 交換する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V91",
+      "type": "mcq",
+      "prompt": "【意味】「調べる（詳しく）」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "examine" },
+        { "id": "B", "text": "example" },
+        { "id": "C", "text": "exact" },
+        { "id": "D", "text": "excite" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "examine = 調べる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V92",
+      "type": "mcq",
+      "prompt": "【意味】「広げる／拡大する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "expand" },
+        { "id": "B", "text": "expend" },
+        { "id": "C", "text": "extend" },
+        { "id": "D", "text": "explore" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "expand = 拡大する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 5
+    },
+    {
+      "id": "V93",
+      "type": "mcq",
+      "prompt": "【意味】「延長する／伸ばす」という意味に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "extend" },
+        { "id": "B", "text": "expand" },
+        { "id": "C", "text": "explain" },
+        { "id": "D", "text": "export" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "extend = 延長する／伸ばす。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 5
+    },
+    {
+      "id": "V94",
+      "type": "mcq",
+      "prompt": "【意味】「探検する／探索する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "explore" },
+        { "id": "B", "text": "explode" },
+        { "id": "C", "text": "employ" },
+        { "id": "D", "text": "enjoy" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "explore = 探索する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 5
+    },
+    {
+      "id": "V95",
+      "type": "mcq",
+      "prompt": "【意味】「雇う」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "employ" },
+        { "id": "B", "text": "enjoy" },
+        { "id": "C", "text": "empty" },
+        { "id": "D", "text": "enter" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "employ = 雇う。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 5
+    },
+    {
+      "id": "V96",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "happiness" },
+        { "id": "B", "text": "holiday" },
+        { "id": "C", "text": "hobby" },
+        { "id": "D", "text": "habit" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "happiness は不可算名詞として扱うのが基本。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 5
+    },
+    {
+      "id": "V97",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "fun" },
+        { "id": "B", "text": "festival" },
+        { "id": "C", "text": "game" },
+        { "id": "D", "text": "event" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "fun は不可算名詞として扱うのが基本。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V98",
+      "type": "mcq",
+      "prompt": "【数え方】次の文が自然になるように（　）に入る最も適切な語句はどれか。\nHe gave me two (   ) of information.",
+      "choices": [
+        { "id": "A", "text": "informations" },
+        { "id": "B", "text": "pieces" },
+        { "id": "C", "text": "pairs" },
+        { "id": "D", "text": "slices" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "information は不可算名詞。two pieces of information。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V99",
+      "type": "mcq",
+      "prompt": "【意味】次のうち「経験」という意味の名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "experience" },
+        { "id": "B", "text": "exercise" },
+        { "id": "C", "text": "example" },
+        { "id": "D", "text": "exchange" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "experience = 経験。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V100",
+      "type": "mcq",
+      "prompt": "【意味】次のうち「意見」という意味の名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "opinion" },
+        { "id": "B", "text": "option" },
+        { "id": "C", "text": "operation" },
+        { "id": "D", "text": "opponent" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "opinion = 意見。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    }
+  ]
+}
