@@ -1,0 +1,760 @@
+{
+  "version": "2.1",
+  "quizId": "kindaifuzoku-english-vocab-100-part1",
+  "title": "金大附属 英語（語彙：意味・可算/不可算）100問 Part1",
+  "lang": "ja",
+  "target": "金沢大学附属高校 入試対策",
+  "timeLimitSec": 2700,
+  "items": [
+    {
+      "id": "V1",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "chair" },
+        { "id": "B", "text": "information" },
+        { "id": "C", "text": "student" },
+        { "id": "D", "text": "apple" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "information は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 2
+    },
+    {
+      "id": "V2",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "furniture" },
+        { "id": "B", "text": "advice" },
+        { "id": "C", "text": "homework" },
+        { "id": "D", "text": "idea" }
+      ],
+      "answerChoiceId": "D",
+      "explanation": "idea は可算名詞（an idea / ideas）。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 2
+    },
+    {
+      "id": "V3",
+      "type": "mcq",
+      "prompt": "【many/much】次の（　）に入る最も適切な語はどれか。\nHow (   ) water do you drink every day?",
+      "choices": [
+        { "id": "A", "text": "many" },
+        { "id": "B", "text": "much" },
+        { "id": "C", "text": "few" },
+        { "id": "D", "text": "little" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "water は不可算名詞なので much。",
+      "tags": ["vocabulary", "many-much"],
+      "difficulty": 2
+    },
+    {
+      "id": "V4",
+      "type": "mcq",
+      "prompt": "【many/much】次の（　）に入る最も適切な語はどれか。\nHow (   ) students are in your class?",
+      "choices": [
+        { "id": "A", "text": "much" },
+        { "id": "B", "text": "many" },
+        { "id": "C", "text": "little" },
+        { "id": "D", "text": "less" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "students は可算名詞なので many。",
+      "tags": ["vocabulary", "many-much"],
+      "difficulty": 2
+    },
+    {
+      "id": "V5",
+      "type": "mcq",
+      "prompt": "【数え方】次の文が自然になるように（　）に入る最も適切な語句はどれか。\nI bought two (   ) of bread.",
+      "choices": [
+        { "id": "A", "text": "breads" },
+        { "id": "B", "text": "pieces" },
+        { "id": "C", "text": "informations" },
+        { "id": "D", "text": "advices" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "bread は不可算名詞。two pieces of bread。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V6",
+      "type": "mcq",
+      "prompt": "【数え方】次の文が自然になるように（　）に入る最も適切な語句はどれか。\nI need a (   ) of scissors.",
+      "choices": [
+        { "id": "A", "text": "piece" },
+        { "id": "B", "text": "pair" },
+        { "id": "C", "text": "bottle" },
+        { "id": "D", "text": "slice" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "scissors は a pair of scissors。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V7",
+      "type": "mcq",
+      "prompt": "【不可算】次のうち、不可算名詞として扱われるのはどれか。",
+      "choices": [
+        { "id": "A", "text": "traffic" },
+        { "id": "B", "text": "ticket" },
+        { "id": "C", "text": "question" },
+        { "id": "D", "text": "letter" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "traffic は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V8",
+      "type": "mcq",
+      "prompt": "【不可算】次のうち、不可算名詞として扱われるのはどれか。",
+      "choices": [
+        { "id": "A", "text": "news" },
+        { "id": "B", "text": "book" },
+        { "id": "C", "text": "pencil" },
+        { "id": "D", "text": "desk" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "news は不可算名詞（a news は不可）。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V9",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "music" },
+        { "id": "B", "text": "song" },
+        { "id": "C", "text": "mistake" },
+        { "id": "D", "text": "game" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "music は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 2
+    },
+    {
+      "id": "V10",
+      "type": "mcq",
+      "prompt": "【few/little】次の（　）に入る最も適切な語はどれか。\nI have (   ) time today, so I can't go out.",
+      "choices": [
+        { "id": "A", "text": "few" },
+        { "id": "B", "text": "a few" },
+        { "id": "C", "text": "little" },
+        { "id": "D", "text": "many" }
+      ],
+      "answerChoiceId": "C",
+      "explanation": "time は不可算名詞なので little。",
+      "tags": ["vocabulary", "few-little"],
+      "difficulty": 3
+    },
+    {
+      "id": "V11",
+      "type": "mcq",
+      "prompt": "【few/little】次の（　）に入る最も適切な語はどれか。\nI have (   ) friends here, so I feel lonely.",
+      "choices": [
+        { "id": "A", "text": "little" },
+        { "id": "B", "text": "few" },
+        { "id": "C", "text": "much" },
+        { "id": "D", "text": "less" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "friends は可算複数なので few。",
+      "tags": ["vocabulary", "few-little"],
+      "difficulty": 3
+    },
+    {
+      "id": "V12",
+      "type": "mcq",
+      "prompt": "【単複同形】単数と複数が同じ形なのはどれか。",
+      "choices": [
+        { "id": "A", "text": "child" },
+        { "id": "B", "text": "sheep" },
+        { "id": "C", "text": "woman" },
+        { "id": "D", "text": "mouse" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "sheep は単複同形（two sheep）。",
+      "tags": ["vocabulary", "plural"],
+      "difficulty": 3
+    },
+    {
+      "id": "V13",
+      "type": "mcq",
+      "prompt": "【不規則複数】次のうち、複数形が children になるのはどれか。",
+      "choices": [
+        { "id": "A", "text": "child" },
+        { "id": "B", "text": "chicken" },
+        { "id": "C", "text": "choice" },
+        { "id": "D", "text": "chair" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "child の複数形は children。",
+      "tags": ["vocabulary", "plural"],
+      "difficulty": 2
+    },
+    {
+      "id": "V14",
+      "type": "mcq",
+      "prompt": "【意味】「借りる」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "lend" },
+        { "id": "B", "text": "borrow" },
+        { "id": "C", "text": "return" },
+        { "id": "D", "text": "carry" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "borrow = 借りる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V15",
+      "type": "mcq",
+      "prompt": "【意味】「貸す」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "lend" },
+        { "id": "B", "text": "send" },
+        { "id": "C", "text": "spend" },
+        { "id": "D", "text": "share" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "lend = 貸す。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V16",
+      "type": "mcq",
+      "prompt": "【意味】次の（　）に入る最も適切な語はどれか。\nI (   ) my umbrella on the train.",
+      "choices": [
+        { "id": "A", "text": "missed" },
+        { "id": "B", "text": "left" },
+        { "id": "C", "text": "found" },
+        { "id": "D", "text": "held" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "leave A on B = AをBに置き忘れる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V17",
+      "type": "mcq",
+      "prompt": "【意味】次の（　）に入る最も適切な語はどれか。\nWe (   ) the last bus, so we walked home.",
+      "choices": [
+        { "id": "A", "text": "missed" },
+        { "id": "B", "text": "lost" },
+        { "id": "C", "text": "watched" },
+        { "id": "D", "text": "caught" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "miss the bus = 乗り遅れる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V18",
+      "type": "mcq",
+      "prompt": "【意味】「到着する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "arrive" },
+        { "id": "B", "text": "invite" },
+        { "id": "C", "text": "invent" },
+        { "id": "D", "text": "avoid" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "arrive = 到着する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V19",
+      "type": "mcq",
+      "prompt": "【意味】「説明する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "explain" },
+        { "id": "B", "text": "expect" },
+        { "id": "C", "text": "excuse" },
+        { "id": "D", "text": "exchange" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "explain = 説明する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V20",
+      "type": "mcq",
+      "prompt": "【意味】「増える／増加する」という意味に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "reduce" },
+        { "id": "B", "text": "increase" },
+        { "id": "C", "text": "remove" },
+        { "id": "D", "text": "replace" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "increase = 増える。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V21",
+      "type": "mcq",
+      "prompt": "【意味】「減らす」という意味に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "reduce" },
+        { "id": "B", "text": "raise" },
+        { "id": "C", "text": "realize" },
+        { "id": "D", "text": "reply" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "reduce = 減らす。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V22",
+      "type": "mcq",
+      "prompt": "【意味】「準備する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "prepare" },
+        { "id": "B", "text": "protect" },
+        { "id": "C", "text": "promise" },
+        { "id": "D", "text": "produce" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "prepare = 準備する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V23",
+      "type": "mcq",
+      "prompt": "【意味】「可能性」という意味の名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "possibility" },
+        { "id": "B", "text": "position" },
+        { "id": "C", "text": "pressure" },
+        { "id": "D", "text": "practice" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "possibility = 可能性。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V24",
+      "type": "mcq",
+      "prompt": "【意味】「意見」という意味の名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "opinion" },
+        { "id": "B", "text": "operation" },
+        { "id": "C", "text": "opponent" },
+        { "id": "D", "text": "option" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "opinion = 意見。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V25",
+      "type": "mcq",
+      "prompt": "【意味】「招待する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "invite" },
+        { "id": "B", "text": "invent" },
+        { "id": "C", "text": "include" },
+        { "id": "D", "text": "inform" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "invite = 招待する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V26",
+      "type": "mcq",
+      "prompt": "【意味】「発明する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "invent" },
+        { "id": "B", "text": "invite" },
+        { "id": "C", "text": "invest" },
+        { "id": "D", "text": "inspect" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "invent = 発明する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V27",
+      "type": "mcq",
+      "prompt": "【意味】「守る／保護する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "protect" },
+        { "id": "B", "text": "prevent" },
+        { "id": "C", "text": "provide" },
+        { "id": "D", "text": "prove" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "protect = 守る／保護する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V28",
+      "type": "mcq",
+      "prompt": "【意味】「防ぐ」という意味に最も近いものはどれか。",
+      "choices": [
+        { "id": "A", "text": "prevent" },
+        { "id": "B", "text": "present" },
+        { "id": "C", "text": "prefer" },
+        { "id": "D", "text": "predict" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "prevent = 防ぐ。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V29",
+      "type": "mcq",
+      "prompt": "【意味】次の（　）に入る最も適切な語はどれか。\nPlease (   ) me your name.",
+      "choices": [
+        { "id": "A", "text": "say" },
+        { "id": "B", "text": "tell" },
+        { "id": "C", "text": "speak" },
+        { "id": "D", "text": "talk" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "tell + 人 + 内容：tell me your name。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 4
+    },
+    {
+      "id": "V30",
+      "type": "mcq",
+      "prompt": "【意味】次の（　）に入る最も適切な語はどれか。\nHe can (   ) English well.",
+      "choices": [
+        { "id": "A", "text": "say" },
+        { "id": "B", "text": "speak" },
+        { "id": "C", "text": "tell" },
+        { "id": "D", "text": "talk" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "speak + 言語：speak English。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V31",
+      "type": "mcq",
+      "prompt": "【意味】「見る（注意して）」に最も近い動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "see" },
+        { "id": "B", "text": "watch" },
+        { "id": "C", "text": "look" },
+        { "id": "D", "text": "find" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "watch は（動いているものを）注意して見る。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V32",
+      "type": "mcq",
+      "prompt": "【意味】次の（　）に入る最も適切な語はどれか。\n(   ) at the blackboard, please.",
+      "choices": [
+        { "id": "A", "text": "Look" },
+        { "id": "B", "text": "See" },
+        { "id": "C", "text": "Watch" },
+        { "id": "D", "text": "Hear" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "look at = 〜を見る（意識して視線を向ける）。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V33",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "equipment" },
+        { "id": "B", "text": "machine" },
+        { "id": "C", "text": "tool" },
+        { "id": "D", "text": "device" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "equipment は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V34",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "luggage" },
+        { "id": "B", "text": "bag" },
+        { "id": "C", "text": "suitcase" },
+        { "id": "D", "text": "box" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "luggage は不可算名詞。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V35",
+      "type": "mcq",
+      "prompt": "【数え方】次の文が自然になるように（　）に入る最も適切な語句はどれか。\nTwo (   ) of luggage were left here.",
+      "choices": [
+        { "id": "A", "text": "luggages" },
+        { "id": "B", "text": "pieces" },
+        { "id": "C", "text": "informations" },
+        { "id": "D", "text": "furnitures" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "luggage は不可算名詞。two pieces of luggage。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V36",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "knowledge" },
+        { "id": "B", "text": "lesson" },
+        { "id": "C", "text": "story" },
+        { "id": "D", "text": "question" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "knowledge は不可算名詞として扱うのが基本。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V37",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "weather" },
+        { "id": "B", "text": "season" },
+        { "id": "C", "text": "day" },
+        { "id": "D", "text": "week" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "weather は不可算名詞（a weather は不可）。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    },
+    {
+      "id": "V38",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "paper" },
+        { "id": "B", "text": "notebook" },
+        { "id": "C", "text": "magazine" },
+        { "id": "D", "text": "newspaper" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "paper は材料や紙としては不可算名詞（papers は新聞・書類など別義）。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V39",
+      "type": "mcq",
+      "prompt": "【意味】「持ってくる」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "bring" },
+        { "id": "B", "text": "take" },
+        { "id": "C", "text": "throw" },
+        { "id": "D", "text": "turn" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "bring =（こちらへ）持ってくる。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V40",
+      "type": "mcq",
+      "prompt": "【意味】「持っていく」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "bring" },
+        { "id": "B", "text": "take" },
+        { "id": "C", "text": "carry" },
+        { "id": "D", "text": "get" }
+      ],
+      "answerChoiceId": "B",
+      "explanation": "take =（向こうへ）持っていく。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V41",
+      "type": "mcq",
+      "prompt": "【意味】「必要とする」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "need" },
+        { "id": "B", "text": "meet" },
+        { "id": "C", "text": "mean" },
+        { "id": "D", "text": "mind" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "need = 必要とする。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V42",
+      "type": "mcq",
+      "prompt": "【意味】「決める／決定する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "decide" },
+        { "id": "B", "text": "describe" },
+        { "id": "C", "text": "discover" },
+        { "id": "D", "text": "develop" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "decide = 決める。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V43",
+      "type": "mcq",
+      "prompt": "【意味】「発見する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "discover" },
+        { "id": "B", "text": "discuss" },
+        { "id": "C", "text": "disagree" },
+        { "id": "D", "text": "disappear" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "discover = 発見する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V44",
+      "type": "mcq",
+      "prompt": "【意味】「議論する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "discuss" },
+        { "id": "B", "text": "discover" },
+        { "id": "C", "text": "describe" },
+        { "id": "D", "text": "divide" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "discuss = 議論する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V45",
+      "type": "mcq",
+      "prompt": "【意味】「成功する」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "succeed" },
+        { "id": "B", "text": "support" },
+        { "id": "C", "text": "suppose" },
+        { "id": "D", "text": "suggest" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "succeed = 成功する。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 3
+    },
+    {
+      "id": "V46",
+      "type": "mcq",
+      "prompt": "【意味】「選ぶ」という意味の動詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "choose" },
+        { "id": "B", "text": "change" },
+        { "id": "C", "text": "check" },
+        { "id": "D", "text": "catch" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "choose = 選ぶ。",
+      "tags": ["vocabulary", "meaning"],
+      "difficulty": 2
+    },
+    {
+      "id": "V47",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "progress" },
+        { "id": "B", "text": "step" },
+        { "id": "C", "text": "plan" },
+        { "id": "D", "text": "goal" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "progress は不可算名詞として扱うのが基本。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V48",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "research" },
+        { "id": "B", "text": "report" },
+        { "id": "C", "text": "result" },
+        { "id": "D", "text": "reason" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "research は不可算名詞として扱うのが基本。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V49",
+      "type": "mcq",
+      "prompt": "【数え方】次の文が自然になるように（　）に入る最も適切な語句はどれか。\nShe gave me a (   ) of advice.",
+      "choices": [
+        { "id": "A", "text": "piece" },
+        { "id": "B", "text": "pair" },
+        { "id": "C", "text": "bottle" },
+        { "id": "D", "text": "cup" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "advice は不可算名詞。a piece of advice。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 4
+    },
+    {
+      "id": "V50",
+      "type": "mcq",
+      "prompt": "【可算/不可算】次のうち、不可算名詞はどれか。",
+      "choices": [
+        { "id": "A", "text": "advice" },
+        { "id": "B", "text": "suggestion" },
+        { "id": "C", "text": "idea" },
+        { "id": "D", "text": "plan" }
+      ],
+      "answerChoiceId": "A",
+      "explanation": "advice は不可算名詞（suggestion は可算）。",
+      "tags": ["vocabulary", "countable-uncountable"],
+      "difficulty": 3
+    }
+  ]
+}
